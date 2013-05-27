@@ -108,6 +108,7 @@ ROOT_URLCONF = 'bross.urls'
 WSGI_APPLICATION = 'bross.wsgi.application'
 
 TEMPLATE_DIRS = (
+    '/Users/mac_getlogic/virtualenvs/brosscms/brosscms/bross/bross/view/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
