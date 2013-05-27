@@ -83,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '1c+a*t$hq%9^#q_r=h$dh==pn3ana!7#i9*0m^ut!1wgmo@^45'
+SECRET_KEY = '%a$sfpz&qrd-4yccjffjk_xqa)sw8kf^lo#j10#jf5rn*uza(t'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -108,7 +108,8 @@ ROOT_URLCONF = 'bross.urls'
 WSGI_APPLICATION = 'bross.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/Users/mac_getlogic/virtualenvs/brosscms/brosscms/bross/bross/view/templates',
+    '/Users/mac_getlogic/virtualenvs/brosscms/brosscms/bross/bross/templates',
+
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
