@@ -15,4 +15,4 @@ def hours_ahead(request, offset):
     except ValueError:
         raise Http404()
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
-    return render(request, 'hours_ahead.html', {'next_time': dt, 'offset': offset})   
+    return render(request, 'hours_ahead.html', {'next_time': dt, 'offset': offset})
