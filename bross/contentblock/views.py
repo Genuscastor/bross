@@ -30,4 +30,4 @@ def saveSubmit(request):
 
 def content(request, id):
 	cont = Content.objects.filter(id)
-	return render(request, 'show.html', {'text': cont.data})
+	return render(request, 'show.html', {'data': cont})
