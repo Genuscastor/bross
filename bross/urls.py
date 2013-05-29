@@ -1,6 +1,8 @@
 from django.conf.urls.defaults import patterns, include, url
 from bross.views import hello, current_datetime, hours_ahead
 from bross.contentblock import views
+#Deze import werkt niet en daardoor gaat alles stuk.
+# from bross.contact import views 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -14,6 +16,9 @@ urlpatterns = patterns('',
     url(r'^add/$', views.add),
     url(r'^show/(\d)/$', views.content),
     url(r'^save/$', views.saveSubmit),
+
+    #deze aanzetten als import werkt
+    # url(r'^contact/$', views.contact),
 
     # Examples:
     # url(r'^$', 'bross.views.home', name='home'),
