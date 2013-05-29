@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from bross.contentblock.models import Book
-from django.core.mail import send_mail
-from bross.contact.forms import ContactForm
-from django.http import HttpResponseRedirect
-
 
 def search_form(request):
     return render(request, 'search_form.html') 
