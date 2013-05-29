@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from bross.views import hello, current_datetime, hours_ahead
+from bross.contentblock import views
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -8,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^hello/$', hello),
     url(r'^time/$', current_datetime),
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
+    url(r'^search-form/$', views.search_form),
     # Examples:
     # url(r'^$', 'bross.views.home', name='home'),
     # url(r'^bross/', include('bross.foo.urls')),
