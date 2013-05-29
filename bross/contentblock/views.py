@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from bross.contentblock.models import Book
+from bross.contentblock.models import *
 
 def search_form(request):
     return render(request, 'search_form.html') 
@@ -13,3 +13,21 @@ def search(request):
             {'books': books, 'query': q})
     else:
         return HttpResponse('Please submit a search term.')
+
+def add(request):
+	return render(request, 'add.html')
+
+def show(request):
+	return render(request, 'show.html')
+
+def saveSubmit(request):
+	if request.POST != '':
+		p = Author(first_name=request.POST['firstname'], last_name=request.POST['lastname'], email='asdfasdf@daf.asd')
+		p.save()
+		return show(request)
+	else:
+		return HttpResponse('No values submited')
+
+def content(request, id):
+	cont = Content.objects.filter(id)
+	return render(request, 'show.html', {'text': cont.data})

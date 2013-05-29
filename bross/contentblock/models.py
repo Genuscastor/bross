@@ -28,3 +28,10 @@ class Book(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class Content(models.Model):
+    title = models.CharField(max_length=280)
+    data = models.CharField(max_length=500)
+
+    def __unicode__(self):
+        return self.title

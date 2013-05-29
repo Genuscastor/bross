@@ -1,0 +1,8 @@
+<div class="wrappert">
+	<form action="/save/" method="post">
+		{% csrf_token %}
+		<p>firstname <input type="text" name="firstname"></input></p>
+		<p>lastname <input type="text" name="lastname"></input></p>
+		<input type="submit" value="Opslaandert">
+	</form>
+</div>
