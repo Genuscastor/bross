@@ -29,5 +29,5 @@ def saveSubmit(request):
 		return HttpResponse('No values submited')
 
 def content(request, id):
-	cont = Content.objects.filter(id)
+	cont = Content.objects.filter(id=1)
 	return render(request, 'show.html', {'data': cont})
