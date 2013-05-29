@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^time/$', current_datetime),
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
     url(r'^search-form/$', views.search_form),
+    url(r'^search/$', views.search),
     # Examples:
     # url(r'^$', 'bross.views.home', name='home'),
     # url(r'^bross/', include('bross.foo.urls')),
