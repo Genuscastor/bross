@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^add/$', add),
     url(r'^show/(\d)/$', content),
     url(r'^save/$', saveSubmit),
+    (r'^register/$', 'bross.account.views.AccountRegistration'),
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
