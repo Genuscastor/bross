@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     url(r'^show/(\d)/$', content),
     url(r'^save/$', saveSubmit),
     (r'^register/$', 'bross.account.views.AccountRegistration'),
+    (r'^beers/$', 'bross.beer.views.BeersAll'),
+    (r'^beers/(?P<beerslug>.*)/$', 'bross.beer.views.SpecificBeer'),
+    (r'^brewerys/(?P<breweryslug>.*)/$', 'bross.beer.views.SpecificBrewery'),
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
