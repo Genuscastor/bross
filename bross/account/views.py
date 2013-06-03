@@ -45,7 +45,11 @@ def LoginRequest(request):
                         account = authenticate(username=username, password=password)
                         if account is not None:
                                 login(request, account)
-                                return HttpResponseRedirect('/dashboard/')
+                                redirect_to = request.REQUEST.get('next', '')
+                                if redirect_to is not None:
+                                        return HttpResponseRedirect(redirect_to)
+                                else:
+                                        return HttpResponseRedirect('/dashboard/')
                         else:
                                 return render_to_response('login.html', {'form': form}, context_instance=RequestContext(request))
                 else:

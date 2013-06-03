@@ -22,6 +22,11 @@ urlpatterns = patterns('',
     (r'^login/$', 'bross.account.views.LoginRequest'),
     (r'^logout/$', 'bross.account.views.LogoutRequest'),
     (r'^dashboard/$', 'bross.account.views.Dashboard'),
+    (r'^pages/$', 'bross.pages.views.Pages'),
+    (r'^pages/add/$', 'bross.pages.views.AddPage'),
+    # (r'^themes/$', 'bross.themes.views.Themes'),
+    # (r'^menus/$', 'bross.menus.views.Menus'),
+    # (r'^modules/$', 'bross.modules.views.Modules'),
 
 
     #deze aanzetten als import werkt

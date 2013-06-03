@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Add page{% endblock %}
+{% block h1 %}Add page{% endblock %}
+{% block content %}
+	<a href="/pages/">Nah, laat maar zitten, terug naar pages.</a>
+    <form>
+    	<p>{{ form.title }}</p>
+    	<p>{{ form.content }}</p>
+    	<p><input type="submit" alt="Register" value="Add page / Publish / wat anders stoers"/></p>
+    </form>
+{% endblock %}
