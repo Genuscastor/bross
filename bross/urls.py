@@ -19,6 +19,9 @@ urlpatterns = patterns('',
     (r'^beers/$', 'bross.beer.views.BeersAll'),
     (r'^beers/(?P<beerslug>.*)/$', 'bross.beer.views.SpecificBeer'),
     (r'^brewerys/(?P<breweryslug>.*)/$', 'bross.beer.views.SpecificBrewery'),
+    (r'^login/$', 'bross.account.views.LoginRequest'),
+    (r'^logout/$', 'bross.account.views.LogoutRequest'),
+
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
