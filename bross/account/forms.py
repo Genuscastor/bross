@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.forms import ModelForm
 from bross.account.models import Account
 
+
+
 class RegistrationForm(ModelForm):
         username        = forms.CharField(label=(u'User Name'))
         email           = forms.EmailField(label=(u'Email Address'))
@@ -27,6 +29,6 @@ class RegistrationForm(ModelForm):
                 return self.cleaned_data
 
 class LoginForm(forms.Form):
-        username        = forms.CharField(label=(u'User Name'))
-        password        = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False))
+        username        = forms.CharField(label=(u'User Name'), widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+        password        = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False, attrs={'placeholder': 'Password'}))
 		

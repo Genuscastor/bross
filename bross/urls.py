@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from bross.views import hello, current_datetime, hours_ahead
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from bross.contentblock.views import search_form, search, add, show, saveSubmit, content
 #Deze import werkt niet en daardoor gaat alles stuk.
 from bross.contact.views import contact
@@ -21,7 +22,6 @@ urlpatterns = patterns('',
     (r'^brewerys/(?P<breweryslug>.*)/$', 'bross.beer.views.SpecificBrewery'),
     (r'^login/$', 'bross.account.views.LoginRequest'),
     (r'^logout/$', 'bross.account.views.LogoutRequest'),
-
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
