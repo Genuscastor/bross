@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from bross.views import hello, current_datetime, hours_ahead
 from bross.contentblock.views import search_form, search, add, show, saveSubmit, content
 #Deze import werkt niet en daardoor gaat alles stuk.
