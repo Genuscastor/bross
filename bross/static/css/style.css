@@ -15,6 +15,9 @@
 	padding:0;
 }
 
+a, button, input[type='submit']  {
+	cursor: pointer;
+}
 body {
 	font-family: 'Lato', Arial, sans-serif;
 	background:#dadada;
