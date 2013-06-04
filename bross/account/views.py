@@ -29,6 +29,7 @@ def AccountRegistration(request):
 
 @login_required
 def Dashboard(request):
+        messages.add_message(request, messages.INFO, 'Welkom dikke sukkel')
         if not request.user.is_authenticated():
                 return HttpResponseRedirect('/login/')
         account = request.user.get_profile
@@ -52,11 +53,14 @@ def LoginRequest(request):
                                 else:
                                         return HttpResponseRedirect('/dashboard/')
                         else:
+                                messages.add_message(request, messages.INFO, '')
                                 return render_to_response('login.html', {'form': form}, context_instance=RequestContext(request))
                 else:
+                        messages.add_message(request, messages.INFO, 'niet goed he?')
                         return render_to_response('login.html', {'form': form}, context_instance=RequestContext(request))
         else:
                 ''' user is not submitting the form, show the login form '''
+                messages.add_message(request, messages.INFO, 'ok dan log je toch lekker niet in... sjonge')
                 form = LoginForm()
                 context = {'form': form}
                 return render_to_response('login.html', context, context_instance=RequestContext(request))
