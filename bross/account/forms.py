@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from django.forms import ModelForm
 from bross.account.models import Account
 
-
-
 class RegistrationForm(ModelForm):
         username        = forms.CharField(label=(u'User Name'))
         email           = forms.EmailField(label=(u'Email Address'))
@@ -24,11 +22,15 @@ class RegistrationForm(ModelForm):
                 raise forms.ValidationError("That username is already taken, please select another.")
 
         def clean(self):
-                if self.cleaned_data['password'] != self.cleaned_data['password1']:
-                        raise forms.ValidationError("The passwords did not match.  Please try again.")
-                return self.cleaned_data
+                password = self.cleaned_data['password']
+                if password != '':
+                        if self.cleaned_data['password'] != self.cleaned_data['password1']:
+                                raise forms.ValidationError("The passwords did not match.  Please try again.")
+                        return self.cleaned_data
+                else:
+                        raise forms.ValidationError("Please fill in a password.")
 
 class LoginForm(forms.Form):
-        username        = forms.CharField(label=(u'User Name'), widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-        password        = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False, attrs={'placeholder': 'Password'}))
+        username        = forms.CharField(label=(u'User Name'))
+        password        = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False))
 		
