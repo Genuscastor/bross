@@ -50,7 +50,6 @@ def LoginRequest(request):
                                 if redirect_to is not None:
                                         return HttpResponseRedirect(redirect_to)
                                 else:
-                                        messages.add_message(request, messages.INFO, 'Hello world.')
                                         return HttpResponseRedirect('/dashboard/')
                         else:
                                 return render_to_response('login.html', {'form': form}, context_instance=RequestContext(request))
