@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from bross.pages.forms import AddPageForm
-from bross.pages.models import Pages
+from bross.pages.models import Page
 from django.contrib.auth import authenticate, login, logout
 
 @login_required
@@ -15,7 +15,7 @@ def Pages(request):
 def AddPage(request):
 	if request.method == 'POST':
                 form = AddPageForm(request.POST)
-                if form.is_valid():
+            	if form.is_valid():
                         #Opslaan die shit pages.save()
                         return HttpResponseRedirect('/pages/')
                 else:
