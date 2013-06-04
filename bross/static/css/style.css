@@ -21,6 +21,10 @@ a, button, input[type='submit']  {
 body {
 	font-family: 'Lato', Arial, sans-serif;
 	background:#dadada;
+<<<<<<< HEAD
+=======
+	padding:50px 0;
+>>>>>>> origin/master
 }
 
 #header {
@@ -49,7 +53,11 @@ body {
 
 .center {
 	text-align: center;
+<<<<<<< HEAD
 	margin-top:10%;
+=======
+	margin-top:5%;
+>>>>>>> origin/master
 }
 
 .center h1 {
