@@ -6,6 +6,7 @@ from django.template import RequestContext
 from bross.account.forms import RegistrationForm, LoginForm
 from bross.account.models import Account
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 def AccountRegistration(request):
         if request.user.is_authenticated():
@@ -49,6 +50,7 @@ def LoginRequest(request):
                                 if redirect_to is not None:
                                         return HttpResponseRedirect(redirect_to)
                                 else:
+                                        messages.add_message(request, messages.INFO, 'Hello world.')
                                         return HttpResponseRedirect('/dashboard/')
                         else:
                                 return render_to_response('login.html', {'form': form}, context_instance=RequestContext(request))
