@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from bross.views import hello, current_datetime, hours_ahead
 from bross.contentblock.views import search_form, search, add, show, saveSubmit, content
 #Deze import werkt niet en daardoor gaat alles stuk.
@@ -15,6 +15,19 @@ urlpatterns = patterns('',
     url(r'^add/$', add),
     url(r'^show/(\d)/$', content),
     url(r'^save/$', saveSubmit),
+    (r'^register/$', 'bross.account.views.AccountRegistration'),
+    (r'^beers/$', 'bross.beer.views.BeersAll'),
+    (r'^beers/(?P<beerslug>.*)/$', 'bross.beer.views.SpecificBeer'),
+    (r'^brewerys/(?P<breweryslug>.*)/$', 'bross.beer.views.SpecificBrewery'),
+    (r'^login/$', 'bross.account.views.LoginRequest'),
+    (r'^logout/$', 'bross.account.views.LogoutRequest'),
+    (r'^dashboard/$', 'bross.account.views.Dashboard'),
+    (r'^pages/$', 'bross.pages.views.Pages'),
+    (r'^pages/add/$', 'bross.pages.views.AddPage'),
+    # (r'^themes/$', 'bross.themes.views.Themes'),
+    # (r'^menus/$', 'bross.menus.views.Menus'),
+    # (r'^modules/$', 'bross.modules.views.Modules'),
+
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
