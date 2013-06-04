@@ -27,7 +27,7 @@ urlpatterns = patterns('',
     # (r'^themes/$', 'bross.themes.views.Themes'),
     # (r'^menus/$', 'bross.menus.views.Menus'),
     # (r'^modules/$', 'bross.modules.views.Modules'),
-
+    # COMMENT VOOR CHECK
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
