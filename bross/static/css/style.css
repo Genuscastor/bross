@@ -145,7 +145,14 @@ input[type='text'], input[type='password'] {
 	-o-transition-duration: 0.4s;
 }
 
-input:hover, input:focus {
+textarea {
+	border:none;
+	-webkit-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+}
+
+input:hover, input:focus, textarea:hover, textarea:focus {
 	background:#EFEFEF;
 }
 
