@@ -12,6 +12,24 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <div id="header"> 
+        <div class="logo">
+                <a href="#"><h1>Bross CMS</h1></a>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}<li><a href="/pages/">Pages</a></li>
+            <li><a href="/themes/">Themes</a></li>
+            <li><a href="/menus/">Menus</a></li>
+            <li><a href="/modules/">Modules</a></li>{% endif %}
+            {% if user.is_authenticated %}<p>User: {{account.user}} <a href="/logout/">Logout</a></p>{% else %}<p><a href="/login/">Login</a></p>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <h1>{% block h1 %}{% endblock %}</h1>
+
     {% block content %}{% endblock %}
     {% block footer %}
 	<div id="footer">
