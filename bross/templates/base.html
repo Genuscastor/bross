@@ -21,20 +21,26 @@
 <body>
     <div id="header"> 
         <div class="logo">
-                <a href="/dashboard/"><h1>Bross CMS</h1></a>
+                <a href="/dashboard/">
+                    <h1>Bross CMS</h1>
+                </a>
         </div>
-    </div>
-    <nav>
-        <ul>
-            {% if user.is_authenticated %}<li><a href="/pages/">Pages</a></li>
-            <li><a href="/themes/">Themes</a></li>
-            <li><a href="/menus/">Menus</a></li>
-            <li><a href="/modules/">Modules</a></li>{% endif %}
-            {% if user.is_authenticated %}<p>User: {{account.user}} <a href="/logout/">Logout</a></p>{% else %}<p><a href="/login/">Login</a></p>
-            {% endif %}
-        </ul>
-    </nav>
-    
+        <div class="nav">
+            <ul>
+                {% if user.is_authenticated %}<li><a class="pages" href="/pages/">Pages</a></li>
+                <li><a class="themes" href="/themes/">Themes</a></li>
+                <li><a class="menus" href="/menus/">Menus</a></li>
+                <li><a class="modules" href="/modules/">Modules</a></li>{% endif %}
+            </ul>
+        </div>
+        <div class="profile-options">
+            <ul class="profile-options">
+                <li>{% if user.is_authenticated %}<p>User: {{account.user}}</li>
+                <li><a href="/logout/">Logout</a></p>{% else %}<p><a href="/login/">Login</a></p></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>    
     <h1>{% block h1 %}{% endblock %}</h1>
 
     {% block content %}{% endblock %}
