@@ -56,6 +56,31 @@ body {
 
 .logo {
 	padding: 10px;
+	width: 150px;
+	float: left;
+}
+
+.nav {
+	float: left;
+}
+
+.nav li, .profile-options li {
+	list-style: none;
+	padding:0 40px;
+	float: left;
+	height: 50px;
+	border-right: 1px solid #53575c;
+	line-height: 60px;
+}
+
+.nav li a, .profile-options li a
+ {
+	color: #fff;
+	text-decoration: none;
+}
+
+.profile-options {
+	float: right;
 }
 
 #content {
