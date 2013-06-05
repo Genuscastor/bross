@@ -24,6 +24,20 @@ body {
 	padding:50px 0;
 }
 
+.content {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.form {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.register_div {
+	margin:10px 0;
+}
+
 #header {
 	position:fixed;
 	top:0;
@@ -204,4 +218,3 @@ div.ballon {
 
 div.ballon:hover{
 	background: url(../img/ballonhover.png);
-}
