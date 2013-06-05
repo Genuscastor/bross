@@ -4,15 +4,14 @@
 {% block h1 %}Add page{% endblock %}
 {% block content %}
 	<a href="/pages/">Nah, laat maar zitten, terug naar pages.</a>
-    <form>
-    	<p>{{ form.title }}</p>
-    	<p>{{ form.content }}</p>
-    	<p>{{ form.description }}</p>
-    	<p>{{ form.location }}</p>
-    	<p>{{ form.template }}</p>
-    	<p>{{ form.parent }}</p>
-    	<p>{{ form.menu }}</p>
-    	<p>{{ form.status }}</p>
-    	<p style="height:2em"><input type="submit" alt="Register" value="Add page"/></p>
+    <form class="editor">
+        <p>{{ form.title }}</p>
+        <p>{{ form.content }}</p>
+        <p>{{ form.description }}</p>
+        <p>{{ form.location }}</p>
+        <p>{{ form.status }}</p>
+        <p>{{ form.template }}</p>
+        <p>{{ form.parent }}</p>
+        <p style="height:2em"><input type="submit" alt="Register" value="Add page"/></p>
     </form>
 {% endblock %}

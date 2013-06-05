@@ -15,6 +15,27 @@
 	padding:0;
 }
 
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
 a, button, input[type='submit']  {
 	cursor: pointer;
 }
@@ -71,6 +92,11 @@ body {
 	font-size:100px;
 	font-weight: 300;
 	color:#353a40;
+}
+
+.editor-left {
+	float:left;
+	width:670px;
 }
 
 .container {
@@ -135,6 +161,10 @@ h2 {
 form#login {
 	margin:0 auto;
 	width:240px;
+}
+
+form.editor {
+	
 }
 
 input {
