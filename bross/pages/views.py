@@ -16,6 +16,8 @@ def AddPage(request):
 	if request.method == 'POST':
                 form = AddPageForm(request.POST)
             	if form.is_valid():
+                        p = Page(title='test', content='test', description='test', location='test', template='test', parent='test', menu='test', status='test')
+                        p.save()
                         #Opslaan die shit pages.save()
                         return HttpResponseRedirect('/pages/')
                 else:
@@ -25,3 +27,6 @@ def AddPage(request):
                 form = AddPageForm()
                 context = {'form': form}
                 return render_to_response('add_page.html', context, context_instance=RequestContext(request))
+
+
+
