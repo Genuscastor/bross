@@ -11,6 +11,10 @@
             </ul>
         </div>
 {% endblock %}
+    <div class="sidebar">
+        {% block sidebar %}
+        {% endblock %}
+    </div>
 <div class="wrappert">
 	<form action="/save/" method="post">
 		{% csrf_token %}
