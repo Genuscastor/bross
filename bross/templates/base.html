@@ -34,6 +34,23 @@
                 <li><a class="logout" href="/logout/"><span><img src="{% static "img/logout.png" %}" height="17" width="20"> </span>Logout</a></p>
             </ul>
         </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    </div>    
+    <h1>{% block h1 %}{% endblock %}</h1>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+=======
+>>>>>>> 88ec437e8dc478b5808de770a7c449c91fb03863
     </div> 
     <div class="sidebar">
         {% block sidebar %}
@@ -44,6 +61,10 @@
         <h1>{% block h1 %}{% endblock %}</h1>
     </div>
     {% endblock %}
+<<<<<<< HEAD
+=======
+>>>>>>> origin/test-rick
+>>>>>>> 88ec437e8dc478b5808de770a7c449c91fb03863
     {% block footer %}
 	<div id="footer">
 		<p> 2013 Bross CMS | <a href="http://www.brosscms.com/" target="_BLANK">www.brosscms.com</a></p>
