@@ -25,21 +25,16 @@
                     <h1>Bross CMS</h1>
                 </a>
         </div>
-        <div class="nav">
-            <ul>
-                {% if user.is_authenticated %}<li><a class="pages" href="/pages/">Pages</a></li>
-                <li><a class="themes" href="/themes/">Themes</a></li>
-                <li><a class="menus" href="/menus/">Menus</a></li>
-                <li><a class="modules" href="/modules/">Modules</a></li>{% endif %}
-            </ul>
-        </div>
+        {% block nav %}
+        {% endblock %}
+
         <div class="profile-options">
             <ul class="profile-options">
-                <li>{% if user.is_authenticated %}<p>User: {{account.user}}</li>
-                <li><a href="/logout/">Logout</a></p>{% else %}<p><a href="/login/">Login</a></p></li>
-                {% endif %}
+                <li>{% if user.is_authenticated %}<p class="user-loggedin">Welkom {{account.user}}!</li>{% endif %}
+                <li><a class="logout" href="/logout/"><span><img src="{% static "img/logout.png" %}" height="17" width="20"> </span>Logout</a></p>
             </ul>
         </div>
+<<<<<<< HEAD
     </div>    
     <h1>{% block h1 %}{% endblock %}</h1>
 
@@ -52,6 +47,18 @@
     {% endif %}
 
     {% block content %}{% endblock %}
+=======
+    </div> 
+    <div class="sidebar">
+        {% block sidebar %}
+        {% endblock %}
+    </div>
+    <div class="cms-content">
+    {% block content %}   
+        <h1>{% block h1 %}{% endblock %}</h1>
+    </div>
+    {% endblock %}
+>>>>>>> origin/test-rick
     {% block footer %}
 	<div id="footer">
 		<p> 2013 Bross CMS | <a href="http://www.brosscms.com/" target="_BLANK">www.brosscms.com</a></p>

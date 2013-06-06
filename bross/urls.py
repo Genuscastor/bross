@@ -32,6 +32,11 @@ urlpatterns = patterns('',
     # (r'^themes/$', 'bross.themes.views.Themes'),
     # (r'^menus/$', 'bross.menus.views.Menus'),
     # (r'^modules/$', 'bross.modules.views.Modules'),
+    (r'^resetpassword/passwordsent/$', 'django.contrib.auth.views.password_reset_done'),
+    (r'^resetpassword/$', 'django.contrib.auth.views.password_reset'),
+    (r'^reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', 'django.contrib.auth.views.password_reset_confirm'),
+    (r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
+        
 
 
     #deze aanzetten als import werkt
