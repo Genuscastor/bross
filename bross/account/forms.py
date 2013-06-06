@@ -31,6 +31,6 @@ class RegistrationForm(ModelForm):
                         raise forms.ValidationError("Please fill in a password.")
 
 class LoginForm(forms.Form):
-        username        = forms.CharField(label=(u'User Name'))
-        password        = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False))
+        username        = forms.CharField(label=(u'User Name'), widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+        password        = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False, attrs={'placeholder': 'Password'}))
 		

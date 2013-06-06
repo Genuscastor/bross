@@ -43,7 +43,7 @@ body {
 	top:0;
 	left:0;
 	width:100%;
-	height: 50px;
+	height: 60px;
 	background:#353a40;
 	z-index:999;
 }
@@ -66,17 +66,63 @@ body {
 
 .nav li, .profile-options li {
 	list-style: none;
-	padding:0 40px;
 	float: left;
-	height: 50px;
+	height: 60px;
 	border-right: 1px solid #53575c;
-	line-height: 60px;
+	line-height: 30px;
+	position: relative;
 }
 
-.nav li a, .profile-options li a
- {
+.nav li a, .profile-options li a {
 	color: #fff;
+	font-size: 13px;
+	padding:30px 40px 0px 40px;
+	display: block;
 	text-decoration: none;
+}
+
+.nav li a:hover, .profile-options li a:hover {
+	background: #2a2e33;
+}
+
+.nav li a.active {
+	background-color: #2a2e33;
+}
+
+.nav li a.pages span {
+	position: absolute;
+	top: 10px;
+	left:50px;
+	width: 13px;
+	height: 17px;
+	display: block;
+}
+
+.nav li a.themes span {
+	position: absolute;
+	top: 10px;
+	left:52px;
+	width: 21px;
+	height: 21px;
+	display: block;
+}
+
+.nav li a.menus span {
+	position: absolute;
+	top: 10px;
+	left:49px;
+	width: 21px;
+	height: 18px;
+	display: block;
+}
+
+.nav li a.modules span {
+	position: absolute;
+	top: 10px;
+	left:53px;
+	width: 21px;
+	height: 21px;
+	display: block;
 }
 
 .profile-options {

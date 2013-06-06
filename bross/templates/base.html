@@ -25,14 +25,9 @@
                     <h1>Bross CMS</h1>
                 </a>
         </div>
-        <div class="nav">
-            <ul>
-                {% if user.is_authenticated %}<li><a class="pages" href="/pages/">Pages</a></li>
-                <li><a class="themes" href="/themes/">Themes</a></li>
-                <li><a class="menus" href="/menus/">Menus</a></li>
-                <li><a class="modules" href="/modules/">Modules</a></li>{% endif %}
-            </ul>
-        </div>
+        {% block nav %}
+        {% endblock %}
+
         <div class="profile-options">
             <ul class="profile-options">
                 <li>{% if user.is_authenticated %}<p>User: {{account.user}}</li>
