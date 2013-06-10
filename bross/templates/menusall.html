@@ -13,10 +13,13 @@
                 <li><p><a href="/menus/"><img src="{{ menu.image1.url }}" />{{ menu }}</a></p></li>
                 {% endfor %}   
         </ol>
-                <script src='js/jquery-sortable.js'>$(function  () {
-                  $("ol.listitems").sortable()
+		<script>$(function  () {
+		  $("ol.listitems").sortable()
                   $("ol.parentitems").sortable()                 
-                
-                }) </script>
+		
+                }) 
+
+
+                </script> 
 
 {% endblock %}
