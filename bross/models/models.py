@@ -3,6 +3,7 @@ from django.db import models
 class BrossContent(models.Model):
     author = models.ForeignKey(BrossUser)
     title = models.CharField(max_length=255)
+    url = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     template = models.CharField(max_length=255)
     content = models.TextField()
