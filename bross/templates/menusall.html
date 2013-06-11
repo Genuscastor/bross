@@ -8,13 +8,37 @@
                 
 
         </ol>
-        <ol id="menulist", class='listitems'>
+        <ol id="menulist", class='dd-item'>
                 {% for menu in menus %}
                 <li><p><a href="/menus/"><img src="{{ menu.image1.url }}" />{{ menu }}</a></p></li>
                 {% endfor %}   
         </ol>
+
+<div class="dd">
+    <ol class="dd-list">
+        <li class="dd-item" data-id="1">
+            <div class="dd-handle">Item 1</div>
+        </li>
+        <li class="dd-item" data-id="2">
+            <div class="dd-handle">Item 2</div>
+        </li>
+        <li class="dd-item" data-id="3">
+            <div class="dd-handle">Item 3</div>
+            <ol class="dd-list">
+                <li class="dd-item" data-id="4">
+                    <div class="dd-handle">Item 4</div>
+                </li>
+                <li class="dd-item" data-id="5">
+                    <div class="dd-handle">Item 5</div>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</div>
+
 		<script>$(function  () {
-		  $("ol.listitems").sortable()
+		  $('.dd').nestable({ /* config options */ });
+          $("ol.listitems").sortable()
                   $("ol.parentitems").sortable()                 
 		
                 }) 
