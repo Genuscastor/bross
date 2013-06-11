@@ -28,7 +28,8 @@ urlpatterns = patterns('',
     (r'^pages/$', 'bross.pages.views.Pages'),
     (r'^pages/add/$', 'bross.pages.views.AddPage'),
     (r'^$', 'bross.account.views.LoginRequest'),  
-    (r'^menus/$', 'bross.menus.views.MenusAll'),     
+    (r'^menus/$', 'bross.menus.views.MenusAll'),
+ 
     # (r'^themes/$', 'bross.themes.views.Themes'),
     # (r'^menus/$', 'bross.menus.views.Menus'),
     # (r'^modules/$', 'bross.modules.views.Modules'),
@@ -51,4 +52,5 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
+
 )
