@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+{% load tree_menu_tags %}
+{% show_menu "NieuwMenu" "ordered-list" %}
+
    <style type="text/css">
 
 .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
