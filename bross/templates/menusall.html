@@ -149,6 +149,9 @@
 
     </div>
 
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/static/js/jquery.nestable.js"></script>
 <script>
 
 $(document).ready(function()
@@ -181,41 +184,6 @@ $(document).ready(function()
     updateOutput($('#nestable').data('output', $('#nestable-output')));
     updateOutput($('#nestable2').data('output', $('#nestable2-output')));
 
-        </ol>
-        <ol id="menulist", class='dd-item'>
-                {% for menu in menus %}
-                <li><p><a href="/menus/"><img src="{{ menu.image1.url }}" />{{ menu }}</a></p></li>
-                {% endfor %}   
-        </ol>
-
-<div class="dd">
-    <ol class="dd-list">
-        <li class="dd-item" data-id="1">
-            <div class="dd-handle">Item 1</div>
-        </li>
-        <li class="dd-item" data-id="2">
-            <div class="dd-handle">Item 2</div>
-        </li>
-        <li class="dd-item" data-id="3">
-            <div class="dd-handle">Item 3</div>
-            <ol class="dd-list">
-                <li class="dd-item" data-id="4">
-                    <div class="dd-handle">Item 4</div>
-                </li>
-                <li class="dd-item" data-id="5">
-                    <div class="dd-handle">Item 5</div>
-                </li>
-            </ol>
-        </li>
-    </ol>
-</div>
-
-		<script>$(function  () {
-		  $('.dd').nestable({ /* config options */ });
-          $("ol.listitems").sortable()
-                  $("ol.parentitems").sortable()                 
-		
-                }) 
     $('#nestable-menu').on('click', function(e)
     {
         var target = $(e.target),
