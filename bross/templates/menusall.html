@@ -149,9 +149,6 @@
 
     </div>
 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="/static/js/jquery.nestable.js"></script>
 <script>
 
 $(document).ready(function()
@@ -184,7 +181,6 @@ $(document).ready(function()
     updateOutput($('#nestable').data('output', $('#nestable-output')));
     updateOutput($('#nestable2').data('output', $('#nestable2-output')));
 
-<<<<<<< HEAD
         </ol>
         <ol id="menulist", class='dd-item'>
                 {% for menu in menus %}
@@ -220,7 +216,6 @@ $(document).ready(function()
                   $("ol.parentitems").sortable()                 
 		
                 }) 
-=======
     $('#nestable-menu').on('click', function(e)
     {
         var target = $(e.target),
@@ -232,7 +227,6 @@ $(document).ready(function()
             $('.dd').nestable('collapseAll');
         }
     });
->>>>>>> origin/test-Stefan
 
     $('#nestable3').nestable();
 

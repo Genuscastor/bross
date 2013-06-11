@@ -3,11 +3,10 @@
 * Nestable jQuery Plugin - Copyright (c) 2012 David Bushell - http://dbushell.com/
 * Dual-licensed under the BSD or MIT licenses
 */
-=======
+
  * Nestable jQuery Plugin - Copyright (c) 2012 David Bushell - http://dbushell.com/
  * Dual-licensed under the BSD or MIT licenses
  */
->>>>>>> origin/test-Stefan
 ;(function($, window, document, undefined)
 {
     var hasTouch = 'ontouchstart' in window;
@@ -21,7 +20,7 @@
     var hasPointerEvents = (function()
     {
         var el = document.createElement('div'),
-=======
+
      * Detect CSS pointer-events property
      * events are normally disabled on the dragging element to avoid conflicts
      * https://github.com/ausi/Feature-detection-technique-for-pointer-events/blob/master/modernizr-pointerevents.js
@@ -29,7 +28,7 @@
     var hasPointerEvents = (function()
     {
         var el    = document.createElement('div'),
->>>>>>> origin/test-Stefan
+
             docEl = document.documentElement;
         if (!('pointerEvents' in el.style)) {
             return false;
@@ -42,7 +41,7 @@
         return !!supports;
     })();
 
-<<<<<<< HEAD
+
     var eStart = hasTouch ? 'touchstart' : 'mousedown',
         eMove = hasTouch ? 'touchmove' : 'mousemove',
         eEnd = hasTouch ? 'touchend' : 'mouseup';
@@ -65,7 +64,7 @@
             group : 0,
             maxDepth : 5,
             threshold : 20
-=======
+
     var eStart  = hasTouch ? 'touchstart'  : 'mousedown',
         eMove   = hasTouch ? 'touchmove'   : 'mousemove',
         eEnd    = hasTouch ? 'touchend'    : 'mouseup';
@@ -88,16 +87,14 @@
             group           : 0,
             maxDepth        : 5,
             threshold       : 20
->>>>>>> origin/test-Stefan
         };
 
     function Plugin(element, options)
     {
-<<<<<<< HEAD
+
         this.w = $(window);
-=======
+
         this.w  = $(window);
->>>>>>> origin/test-Stefan
         this.el = $(element);
         this.options = $.extend({}, defaults, options);
         this.init();
@@ -125,11 +122,8 @@
                 }
                 var target = $(e.currentTarget),
                     action = target.data('action'),
-<<<<<<< HEAD
                     item = target.parent(list.options.itemNodeName);
-=======
                     item   = target.parent(list.options.itemNodeName);
->>>>>>> origin/test-Stefan
                 if (action === 'collapse') {
                     list.collapseItem(item);
                 }
@@ -187,27 +181,21 @@
         {
             var data,
                 depth = 0,
-<<<<<<< HEAD
                 list = this;
                 step = function(level, depth)
-=======
                 list  = this;
                 step  = function(level, depth)
->>>>>>> origin/test-Stefan
                 {
                     var array = [ ],
                         items = level.children(list.options.itemNodeName);
                     items.each(function()
                     {
-<<<<<<< HEAD
                         var li = $(this),
                             item = $.extend({}, li.data()),
                             sub = li.children(list.options.listNodeName);
-=======
                         var li   = $(this),
                             item = $.extend({}, li.data()),
                             sub  = li.children(list.options.listNodeName);
->>>>>>> origin/test-Stefan
                         if (sub.length) {
                             item.children = step(sub, depth + 1);
                         }
@@ -227,7 +215,6 @@
         reset: function()
         {
             this.mouse = {
-<<<<<<< HEAD
                 offsetX : 0,
                 offsetY : 0,
                 startX : 0,
@@ -252,7 +239,6 @@
             this.dragDepth = 0;
             this.hasNewRoot = false;
             this.pointEl = null;
-=======
                 offsetX   : 0,
                 offsetY   : 0,
                 startX    : 0,
@@ -277,7 +263,7 @@
             this.dragDepth  = 0;
             this.hasNewRoot = false;
             this.pointEl    = null;
->>>>>>> origin/test-Stefan
+
         },
 
         expandItem: function(li)
@@ -333,13 +319,10 @@
 
         dragStart: function(e)
         {
-<<<<<<< HEAD
             var mouse = this.mouse,
                 target = $(e.target),
-=======
             var mouse    = this.mouse,
                 target   = $(e.target),
->>>>>>> origin/test-Stefan
                 dragItem = target.closest(this.options.itemNodeName);
 
             this.placeEl.css('height', dragItem.height());
@@ -363,11 +346,8 @@
             $(document.body).append(this.dragEl);
             this.dragEl.css({
                 'left' : e.pageX - mouse.offsetX,
-<<<<<<< HEAD
                 'top' : e.pageY - mouse.offsetY
-=======
                 'top'  : e.pageY - mouse.offsetY
->>>>>>> origin/test-Stefan
             });
             // total depth of dragging item
             var i, depth,
@@ -399,33 +379,24 @@
         dragMove: function(e)
         {
             var list, parent, prev, next, depth,
-<<<<<<< HEAD
                 opt = this.options,
-=======
                 opt   = this.options,
->>>>>>> origin/test-Stefan
                 mouse = this.mouse;
 
             this.dragEl.css({
                 'left' : e.pageX - mouse.offsetX,
-<<<<<<< HEAD
                 'top' : e.pageY - mouse.offsetY
-=======
                 'top'  : e.pageY - mouse.offsetY
->>>>>>> origin/test-Stefan
             });
 
             // mouse position last events
             mouse.lastX = mouse.nowX;
             mouse.lastY = mouse.nowY;
             // mouse position this events
-<<<<<<< HEAD
             mouse.nowX = e.pageX;
             mouse.nowY = e.pageY;
-=======
             mouse.nowX  = e.pageX;
             mouse.nowY  = e.pageY;
->>>>>>> origin/test-Stefan
             // distance mouse moved between events
             mouse.distX = mouse.nowX - mouse.lastX;
             mouse.distY = mouse.nowY - mouse.lastY;
@@ -436,19 +407,16 @@
             mouse.dirX = mouse.distX === 0 ? 0 : mouse.distX > 0 ? 1 : -1;
             mouse.dirY = mouse.distY === 0 ? 0 : mouse.distY > 0 ? 1 : -1;
             // axis mouse is now moving on
-<<<<<<< HEAD
             var newAx = Math.abs(mouse.distX) > Math.abs(mouse.distY) ? 1 : 0;
 
             // do nothing on first move
             if (!mouse.moving) {
                 mouse.dirAx = newAx;
-=======
             var newAx   = Math.abs(mouse.distX) > Math.abs(mouse.distY) ? 1 : 0;
 
             // do nothing on first move
             if (!mouse.moving) {
                 mouse.dirAx  = newAx;
->>>>>>> origin/test-Stefan
                 mouse.moving = true;
                 return;
             }
@@ -473,10 +441,8 @@
 <<<<<<< HEAD
 * move horizontal
 */
-=======
              * move horizontal
              */
->>>>>>> origin/test-Stefan
             if (mouse.dirAx && mouse.distAxX >= opt.threshold) {
                 // reset move distance on x-axis for new phase
                 mouse.distAxX = 0;
@@ -537,19 +503,16 @@
 
             // find parent list of item under cursor
             var pointElRoot = this.pointEl.closest('.' + opt.rootClass),
-<<<<<<< HEAD
                 isNewRoot = this.dragRootEl.data('nestable-id') !== pointElRoot.data('nestable-id');
 
             /**
 * move vertical
 */
-=======
                 isNewRoot   = this.dragRootEl.data('nestable-id') !== pointElRoot.data('nestable-id');
 
             /**
              * move vertical
              */
->>>>>>> origin/test-Stefan
             if (!mouse.dirAx || isNewRoot || isEmpty) {
                 // check if groups match if dragging over new root
                 if (isNewRoot && opt.group !== pointElRoot.data('nestable-group')) {
@@ -592,11 +555,8 @@
 
     $.fn.nestable = function(params)
     {
-<<<<<<< HEAD
         var lists = this,
-=======
         var lists  = this,
->>>>>>> origin/test-Stefan
             retval = this;
 
         lists.each(function()
@@ -616,8 +576,5 @@
         return retval || lists;
     };
 
-<<<<<<< HEAD
 })(window.jQuery || window.Zepto, window, document);
-=======
 })(window.jQuery || window.Zepto, window, document);
->>>>>>> origin/test-Stefan
