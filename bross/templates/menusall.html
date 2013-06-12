@@ -1,15 +1,22 @@
-{% extends "base.html" %}
 {% block content %}
 {% load tree_menu_tags %}
-{% show_menu "NieuwMenu" "ordered-list" %}
-
-   <style type="text/css">
+    <style type="text/css">
 
 .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 * html .cf { zoom: 1; }
 *:first-child+html .cf { zoom: 1; }
 
+html { margin: 0; padding: 0; }
+body { font-size: 100%; margin: 0; padding: 1.75em; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
+h1 { font-size: 1.75em; margin: 0 0 0.6em 0; }
+
+a { color: #2996cc; }
+a:hover { text-decoration: none; }
+
+p { line-height: 1.5em; }
+.small { color: #666; font-size: 0.875em; }
+.large { font-size: 1.25em; }
 
 /**
  * Nestable
@@ -84,7 +91,7 @@
 
 @media only screen and (min-width: 700px) { 
 
-    .dd { float: left; width: 100%; }
+    .dd { float: left; width: 48%; }
     .dd + .dd { margin-left: 2%; }
 
 }
@@ -123,33 +130,10 @@
 .dd3-handle:hover { background: #ddd; }
 
     </style>
-    <menu id="nestable-menu">
-        <button type="button" data-action="expand-all">Expand All</button>
-        <button type="button" data-action="collapse-all">Collapse All</button>
-    </menu>
 
     <div class="cf nestable-lists">
-
-        <div class="dd" id="nestable">
-            <ol class="dd-list">
-                {% for parent in parent %}
-                <li class="dd-item" data-id="7">
-                    <div class="dd-handle">{{ parent }}</div>
-                                        {% for menu in menus %}
-                    <ol class="dd-list">
-                        <li class="dd-item" data-id="8"><div class="dd-handle">{{ menu }}</div></li>
-                    </ol>
-                    {% endfor %}
-
-                </li>
-                {% endfor %} 
-
-                
-            </ol>
-        </div>
-
-        
-
+     <div class="dd" id="nestable">
+        {% show_menu "NieuwMenu" "unordered-list" %}
     </div>
 
 
@@ -203,5 +187,5 @@ $(document).ready(function()
 
 });
 </script>
-
+  
 {% endblock %}
