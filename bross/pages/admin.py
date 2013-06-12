@@ -1,9 +1,11 @@
 from django.contrib import admin
-from bross.pages.models import Page
+from bross.pages.models import BrossContent, BrossUser, BrossOption
 
-class PagesAdmin(admin.ModelAdmin):
+class BrossContentAdmin(admin.ModelAdmin):
         prepopulated_fields = {'url': ('title',)}
-        list_display = ('title', 'dateTime')
-        search_fields = ['title', 'dateTime']
+        list_display = ('title', 'datetime')
+        search_fields = ['title', 'datetime']
 
-admin.site.register(Page, PagesAdmin)
+admin.site.register(BrossContent, BrossContentAdmin)
+admin.site.register(BrossUser)
+admin.site.register(BrossOption)
