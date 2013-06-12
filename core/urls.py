@@ -18,4 +18,5 @@ urlpatterns = patterns('',
     (r'^pages/$', 'bross.pages.views.Pages'),
     (r'^pages/add/$', 'bross.pages.views.AddPage'),
     url(r'^(?P<page_url>.+?)/$', 'core.views.getBrossPage'),
+    (r'^themes/$', 'bross.themes.views.Themes'),
 )
