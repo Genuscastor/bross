@@ -16,17 +16,18 @@ PARENT_CHOICES = (
 		('2', 'Parent 2'),
 )
 
+MENU_CHOICES = (
+		#dik automatisch gegenereerde lijst met menus
+		('1', 'Menu 1'),
+		('2', 'Menu 2'),
+)
+
 STATUS_CHOICES = (
 		('P', 'Published'),
 		('O', 'Offline'),
 )
 
 
-class AddPageForm(forms.Form):
-        title           = forms.CharField(label=(u'Title'))
-        content         = forms.CharField(widget=forms.Textarea(attrs={'cols': 80, 'rows': 20}))
-        description		= forms.CharField()
-        location		= forms.CharField()
-        template    	= forms.ChoiceField(choices=TEMPLATE_CHOICES)
-        parent			= forms.ChoiceField(choices=PARENT_CHOICES)
-        status			= forms.ChoiceField(choices=STATUS_CHOICES)
+class AddPageForm(ModelForm):
+	class Meta:
+		model = Page

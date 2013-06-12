@@ -14,15 +14,28 @@
 
 {% block h1 %}Add page{% endblock %}
 {% block content %}
-	<a href="/pages/">Nah, laat maar zitten, terug naar pages.</a>
-    <form class="editor">
+	<a href="/pages/" class="button">Back to pages</a>
+    <form class="editor" action="" method="post">
+{% if form.errors %} <p> Please correct the fields: {{form.errors}} </p> {% endif %}
+        {% csrf_token %}
+        <ul>
+        <label> Title </label>
         <p>{{ form.title }}</p>
+        <label> Content </label>
         <p>{{ form.content }}</p>
+        <label> Desription </label>
         <p>{{ form.description }}</p>
+        <label> Location </label>
         <p>{{ form.location }}</p>
+        <label> Status </label>
         <p>{{ form.status }}</p>
+        <label> Template </label>
         <p>{{ form.template }}</p>
+        <label> Menu </label>
+        <p>{{ form.menu }}</p>
+        <label> Parent </label>
         <p>{{ form.parent }}</p>
         <p style="height:2em"><input type="submit" alt="Register" value="Add page"/></p>
+    </ul>
     </form>
 {% endblock %}

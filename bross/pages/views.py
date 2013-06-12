@@ -12,21 +12,42 @@ def Pages(request):
 	return render_to_response('pages.html')
 
 @login_required
+# def AddPage(request):
+# 	if request.method == 'POST':
+#                 form = AddPageForm(request.POST)
+#             	if form.is_valid():
+#                         title = request.POST.get('title', '')
+#                         content = request.POST.get('content', '')
+#                         description = request.POST.get('description', '')
+#                         location = request.POST.get('location', '')
+#                         template = request.POST.get('template', '')
+#                         parent = request.POST.get('parent', '')
+#                         content_all = Page(title=title, content=content, description=descrition, location=location, template=template, parent=parent)
+#                         content_all.save()
+#                         #Opslaan die shit pages.save()
+#                         return HttpResponseRedirect('/pages/')
+#                 else:
+#                         return render_to_response('add_page.html', {'form': form}, context_instance=RequestContext(request))
+#                         print 'NENENENE'
+#         else:
+#                 ''' user is not submitting the form, show them a blank registration form '''
+#                 form = AddPageForm()
+#                 context = {'form': form}
+#                 return render_to_response('add_page.html', context, context_instance=RequestContext(request))
 def AddPage(request):
-	if request.method == 'POST':
-                form = AddPageForm(request.POST)
-            	if form.is_valid():
-                        p = Page(title='test', content='test', description='test', location='test', template='test', parent='test', menu='test', status='test')
-                        p.save()
-                        #Opslaan die shit pages.save()
-                        return HttpResponseRedirect('/pages/')
-                else:
-                        return render_to_response('add_page.html', {'form': form}, context_instance=RequestContext(request))
+    if request.method == 'POST':
+        form = AddPageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/pages/')
         else:
-                ''' user is not submitting the form, show them a blank registration form '''
-                form = AddPageForm()
-                context = {'form': form}
-                return render_to_response('add_page.html', context, context_instance=RequestContext(request))
+            print form.errors
+            return HttpResponseRedirect('/dashboard/')
+
+    else:        
+        form = AddPageForm()
+        context = { 'form' : form }
+        return render_to_response('add_page.html', context, context_instance=RequestContext(request))
 
 
 
