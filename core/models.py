@@ -15,6 +15,17 @@ PERMISSIONS = (
             ('A', 'Admin'),
 )
 
+MENU_CHOICES = (
+        #dik automatisch gegenereerde lijst met menus
+        ('1', 'Menu 1'),
+        ('2', 'Menu 2'),
+)
+
+STATUS_CHOICES = (
+        ('P', 'Published'),
+        ('O', 'Offline'),
+)
+
 class BrossUser(models.Model):
     name = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
@@ -43,8 +54,8 @@ class BrossContent(models.Model):
     location = models.CharField(max_length=255)
     hasparent = models.IntegerField(max_length=11)
     parent = models.ForeignKey('self', null=True, blank=True)
-    menu = models.IntegerField(max_length=11)
-    status = models.CharField(max_length=255)
+    menu        = models.CharField(max_length=1, choices=MENU_CHOICES)
+    status      = models.CharField(max_length=1, choices=STATUS_CHOICES)
     
     def __unicode__(self):
         return self.title
