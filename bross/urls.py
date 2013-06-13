@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     (r'^pages/add/$', 'bross.pages.views.AddPage'),
     (r'^$', 'bross.account.views.LoginRequest'),  
     (r'^menus/$', 'bross.menus.views.MenusAll'),
+    (r'^addmenu/$', 'bross.treemenus.templatetags.tree_menu_tags.AddMenu'),
 
  
     # (r'^themes/$', 'bross.themes.views.Themes'),
