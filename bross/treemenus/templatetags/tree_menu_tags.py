@@ -2,7 +2,11 @@ import django
 from django import template
 from django.template.defaulttags import url
 from django.template import Node, TemplateSyntaxError
-
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from bross.treemenus.forms import AddMenuForm
+from bross.treemenus.models import MenuItem
 from treemenus.models import Menu, MenuItem
 from treemenus.config import APP_LABEL
 
@@ -19,6 +23,25 @@ def get_treemenus_static_prefix():
         from django.contrib.admin.templatetags.adminmedia import admin_media_prefix
         return admin_media_prefix() + 'img/admin/'
 
+
+#voeg menu toe
+def MenuShow(request):
+    return render_to_response('menusall.html')
+
+def AddMenu(request):
+   if request.method == 'POST':
+       form = AddMenuForm(request.POST)
+       if form.is_valid():
+           form.save()
+           return HttpResponseRedirect('/menus/')
+       else:
+           print form.errors
+           return HttpResponseRedirect('/menus/')
+
+   else:        
+       form = AddMenuForm()
+       context = { 'form' : form }
+       return render_to_response('add_menu.html', context, context_instance=RequestContext(request))
 
 def show_menu(context, menu_name, menu_type=None):
     menu = Menu.objects.get(name=menu_name)

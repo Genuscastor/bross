@@ -1,0 +1,18 @@
+{% block content %}
+<a href="/menus/" class="button">Back to pages</a>
+   <form class="editor" action="" method="post">
+{% if form.errors %} <p> Please correct the fields: {{form.errors}} </p> {% endif %}
+       {% csrf_token %}
+       <ul>
+       <label> Parent </label>
+       <p>{{ form.parent }}</p>
+       <label> Caption </label>
+       <p>{{ form.caption }}</p>     
+       <label> Url </label>
+       <p>{{ form.url }}</p>
+       <label> Named Url </label>
+       <p>{{ form.named_url }}</p>
+       <p style="height:2em"><input type="submit" alt="Register" value="Add page"/></p>
+   </ul>
+   </form>
+{% endblock %}

@@ -2,28 +2,30 @@
 
 {% ifequal menu_type "unordered-list" %}
 	{% if menu_item.has_children %}
-	    <li><a href="{{ menu_item.url }}">{{ menu_item.caption }}</a>
-			<ul>
-			    {% for child in menu_item.children %}
-			        {% show_menu_item child %}
-				{% endfor %}
-			</ul>
-		</li>
-	{% else %}
-		<li><a href="{{ menu_item.url }}">{{ menu_item.caption }}</a></li>
-	{% endif %}
-{% endifequal %}
 
-{% ifequal menu_type "ordered-list" %}
-	{% if menu_item.has_children %}
-	    <li><a href="{{ menu_item.url }}">{{ menu_item.caption }}</a>
-			<ol>
+	    <li class="dd-item" data-id="{{ menu_item.id }}"><div class="dd-handle"><a href="{{ menu_item.url }}">{{ menu_item.caption }}</div></a>
+			<ol class="dd-list">
 			    {% for child in menu_item.children %}
 			        {% show_menu_item child %}
 				{% endfor %}
 			</ol>
-		</li>
+		</li class="dd-item" data-id="{{ menu_item.id }}">
 	{% else %}
-		<li><a href="{{ menu_item.url }}">{{ menu_item.caption }}</a></li>
+		<li class="dd-item" data-id="{{ menu_item.id }}"><div class="dd-handle"><a href="{{ menu_item.url }}">{{ menu_item.caption }}</div></a></li>
+	{% endif %}
+
+{% endifequal %}
+
+{% ifequal menu_type "ordered-list" %}
+	{% if menu_item.has_children %}
+	    <li class="dd-item" data-id="{{ menu_item.id }}"><div class="dd-handle"><a href="{{ menu_item.url }}">{{ menu_item.caption }}</div></a>
+			<ol class="dd-list" data-id="{{ menu_item.id }}">
+			    {% for child in menu_item.children %}
+			        {% show_menu_item child %}
+				{% endfor %}
+			</ol>
+		</li class="dd-item" data-id="{{ menu_item.id }}">
+	{% else %}
+		<li class="dd-item" data-id="{{ menu_item.id }}"><div class="dd-handle"><a href="{{ menu_item.url }}">{{ menu_item.caption }}</div></a></li>
 	{% endif %}
 {% endifequal %}
