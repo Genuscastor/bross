@@ -36,6 +36,7 @@ urlpatterns = patterns('',
     (r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
     (r'^themes/$', 'bross.themes.views.Themes'),
     (r'^modules/$', 'bross.modules.views.Modules'),
+    url(r'^upload/', include('bross.fileupload.urls')),
         
 
 
