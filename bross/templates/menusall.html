@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+
 {% block content %}
+
+{% load tree_menu_tags %}
+
+
+
    <style type="text/css">
 
 .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
@@ -129,17 +135,14 @@
 
         <div class="dd" id="nestable">
             <ol class="dd-list">
-                {% for parent in parent %}
                 <li class="dd-item" data-id="7">
-                    <div class="dd-handle">{{ parent }}</div>
-                                        {% for menu in menus %}
+                    <div class="dd-handle"><p>{% show_menu "henkiepenkie" "ordered-list" %}</p></div>
                     <ol class="dd-list">
-                        <li class="dd-item" data-id="8"><div class="dd-handle">{{ menu }}</div></li>
+                        <!--\\<li class="dd-item" data-id="8"><div class="dd-handle">{% show_menu "henkiepenkie" "ordered-list" %}</div></li>-->
                     </ol>
-                    {% endfor %}
 
                 </li>
-                {% endfor %} 
+
 
                 
             </ol>
