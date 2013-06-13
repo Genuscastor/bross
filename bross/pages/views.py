@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from bross.pages.forms import AddPageForm
+from bross.pages.forms import AddPageForm, EditPageForm
 from bross.pages.models import BrossContent
 from django.contrib.auth import authenticate, login, logout
 
@@ -32,6 +32,34 @@ def ViewPage(request, url):
     page = BrossContent.objects.get(url=url)
     context = {'page': page}
     return render_to_response('viewpage.html', context, context_instance=RequestContext(request))
+
+
+def PagesAll(request):
+    pages = BrossContent.objects.all().order_by('title')
+    context = {'pages': pages}
+    return render_to_response('pages.html', context, context_instance=RequestContext(request))
+
+def EditPage(request, url):
+    page = BrossContent.objects.get(url=url)
+
+    if request.method == 'POST':
+        form = EditPageForm(request.POST, instance=page)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/pages/')
+        else:
+            print form.errors
+            return HttpResponseRedirect('/dashboard/')
+
+    else:
+        form = EditPageForm(instance=page)
+        context = {'form': form}
+        return render_to_response('edit_page.html', context, context_instance=RequestContext(request))
+
+def DeletePage(request, url):
+    page = BrossContent.objects.get(url=url)
+    page.delete()
+    return HttpResponseRedirect('/pages/')
 
 
 
