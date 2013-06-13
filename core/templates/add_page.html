@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% load static %}
 {% block title %}Add Page{% endblock %}
 {% block nav %}
@@ -20,9 +19,8 @@
 {% if form.errors %} <p> Please correct the fields: {{form.errors}} </p> {% endif %}
         {% csrf_token %}
         <ul>
-            <!--
         <label> URL INVULLEN! </label>
-        <p>{{ form.url }}</p>!-->
+        <p>{{ form.url }}</p>
         <label> AUTHOR </label>
         <p>{{ form.author }}</p>     
         <label> Title </label>
