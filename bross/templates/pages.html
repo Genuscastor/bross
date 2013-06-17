@@ -16,5 +16,12 @@
 {% endblock %}
 {% block content %}
 	{% block h1 %}Pages{% endblock %}
+<<<<<<< HEAD
     <p>Laat pages zien</p>
+=======
+        {% for brosscontent in pages %}
+        <p><a href="pages/edit/{{ brosscontent.url }}/">{{ brosscontent }}</a></p>
+        {% endfor %}    
+        <p>Laat pages zien TEST</p>
+>>>>>>> origin/test-Sjaan
 {% endblock %}

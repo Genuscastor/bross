@@ -1,14 +1,12 @@
 from django import forms
 from django.forms import ModelForm
-from bross.pages.models import Page
+from bross.pages.models import BrossContent
+from django.utils.functional import lazy
 
-class AddPageForm(forms.Form):
-        title           = forms.CharField(label=(u'Title'))
-        url				= forms.SlugField()
-        content         = forms.CharField(widget=forms.Textarea(attrs={'cols': 80, 'rows': 20}))
-        description		= forms.CharField()
-        location		= forms.CharField()
-        template    	= forms.CharField()
-        parent			= forms.CharField()
-        menu			= forms.CharField()
-        status			= forms.CharField()
+class AddPageForm(ModelForm):
+	class Meta:
+		model = BrossContent
+
+class EditPageForm(ModelForm):
+	class Meta:
+		model = BrossContent

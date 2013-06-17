@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Add page{% endblock %}
+{% block nav %}
+        <div class="nav">
+            <ul>
+                <li><a class="pages active" href="/pages/"><span><img src="../static/img/pages.png" height="21" width="17"> </span>Pages</a></li>
+                <li><a class="themes" href="/themes/"><span><img src="../static/img/themes.png" height="21" width="21"></span> Themes</a></li>
+                <li><a class="menus" href="/menus/"><span><img src="../static/img/menu.png" height="18" width="21"></span> Menus</a></li>
+                <li><a class="modules" href="/modules/"><span><img src="../static/img/modules.png" height="21" width="21"></span> Modules</a></li>
+            </ul>
+        </div>
+{% endblock %}
+<div class="wrappert">
+	<form action="/save/" method="post">
+		{% csrf_token %}
+		<p>firstname <input type="text" name="firstname"></input></p>
+		<p>lastname <input type="text" name="lastname"></input></p>
+		<input type="submit" value="Opslaandert">
+	</form>
+</div>

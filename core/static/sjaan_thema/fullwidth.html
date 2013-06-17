@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Dynamische titel?</title>
+	<link href="{% static "sjaan_thema/css/style.css" %}" media="screen" type="text/css" rel="stylesheet" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+
+	<!-- Add fancyBox -->
+	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+</head>
+
+<body class="home">
+	<div class="container">
+		<div id="header">
+			<a class="logo" href="index.html">LOGO</a>
+			<div id="nav">
+				<ul>
+					{% for title in pages %}
+			        	<li class="page"><a href="{{ title.url }}/">{{ title }}</a></li>
+			        {% endfor %} 
+				</ul>
+			</div>
+		</div>
+
+		<div id="content">
+			<h1>{{ page.title }} </h1>
+			<p> {{ page.content|safe }} </p>
+		</div>
+		
+		<div id="footer">
+			<div class="credits">
+				<p>developed by <a href="http://www.brosscms.com" target="_BLANK">Bross</a></p>
+			</div>
+			<div class="copyright">
+				<p>&copy; 2013 BrossCMS | <a href="contact.html">Contact</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

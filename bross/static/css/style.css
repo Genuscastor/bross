@@ -1,16 +1,20 @@
+<<<<<<< HEAD
 /* ---- BASIC ---- */
 
 .transition2 {
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
 	-o-transition-duration: 0.2s;
+=======
+body{
+    padding-top: 60px;
+>>>>>>> origin/test-Sjaan
 }
 
-.transition4 {
-	-webkit-transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	-o-transition-duration: 0.4s;
+.preview img {
+    max-height: 50px;
 }
+<<<<<<< HEAD
 
 * {
 	margin:0;
@@ -379,3 +383,5 @@ ul.errorlist li {
 	color: #fff;
 }
 
+=======
+>>>>>>> origin/test-Sjaan
