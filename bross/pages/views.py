@@ -13,22 +13,6 @@ def Pages(request):
 
 @login_required
 def AddPage(request):
-<<<<<<< HEAD
-	if request.method == 'POST':
-                form = AddPageForm(request.POST)
-            	if form.is_valid():
-                        p = Page(title='test', content='test', description='test', location='test', template='test', parent='test', menu='test', status='test')
-                        p.save()
-                        #Opslaan die shit pages.save()
-                        return HttpResponseRedirect('/pages/')
-                else:
-                        return render_to_response('add_page.html', {'form': form}, context_instance=RequestContext(request))
-        else:
-                ''' user is not submitting the form, show them a blank registration form '''
-                form = AddPageForm()
-                context = {'form': form}
-                return render_to_response('add_page.html', context, context_instance=RequestContext(request))
-=======
     if request.method == 'POST':
         form = AddPageForm(request.POST)
         if form.is_valid():
@@ -46,8 +30,7 @@ def AddPage(request):
 
 def ViewPage(request, url):
     page = BrossContent.objects.get(url=url)
-    pages = BrossContent.objects.all().order_by('title')
-    context = {'page': page, 'pages': pages}
+    context = {'page': page}
     return render_to_response('sjaan_thema/fullwidth.html', context, context_instance=RequestContext(request))
 
 
@@ -82,7 +65,6 @@ def DeletePage(request, url):
 
 
 
->>>>>>> origin/test-Sjaan
 
 
 

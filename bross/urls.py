@@ -22,22 +22,13 @@ urlpatterns = patterns('',
     (r'^beers/(?P<beerslug>.*)/$', 'bross.beer.views.SpecificBeer'),
     (r'^brewerys/(?P<breweryslug>.*)/$', 'bross.beer.views.SpecificBrewery'),
     (r'^login/$', 'bross.account.views.LoginRequest'),
-    (r'^$', 'bross.account.views.LoginRequest'),
     (r'^logout/$', 'bross.account.views.LogoutRequest'),
     (r'^dashboard/$', 'bross.account.views.Dashboard'),
     (r'^pages/$', 'bross.pages.views.PagesAll'),
     (r'^pages/add/$', 'bross.pages.views.AddPage'),
-<<<<<<< HEAD
-    (r'^$', 'bross.account.views.LoginRequest'),  
-    (r'^menus/$', 'bross.menus.views.MenusAll'),
-    (r'^addmenu/$', 'bross.treemenus.templatetags.tree_menu_tags.AddMenu'),
-
- 
-=======
     (r'^pages/edit/(?P<url>.*)/$', 'bross.pages.views.EditPage'),
     (r'^pages/delete/(?P<url>.*)/$', 'bross.pages.views.DeletePage'),
     (r'^$', 'bross.account.views.LoginRequest'),    
->>>>>>> origin/test-Sjaan
     # (r'^themes/$', 'bross.themes.views.Themes'),
     # (r'^menus/$', 'bross.menus.views.Menus'),
     # (r'^modules/$', 'bross.modules.views.Modules'),
@@ -45,15 +36,10 @@ urlpatterns = patterns('',
     (r'^resetpassword/$', 'django.contrib.auth.views.password_reset'),
     (r'^reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', 'django.contrib.auth.views.password_reset_confirm'),
     (r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
-<<<<<<< HEAD
-        
-
-=======
     (r'^themes/$', 'bross.themes.views.Themes'),
     (r'^modules/$', 'bross.modules.views.Modules'),
     url(r'^upload/', include('bross.fileupload.urls')),
         
->>>>>>> origin/test-Sjaan
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
@@ -68,10 +54,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
 
-<<<<<<< HEAD
-=======
 
     (r'^(?P<url>.*)/$', 'bross.pages.views.ViewPage'),
 
->>>>>>> origin/test-Sjaan
 )
