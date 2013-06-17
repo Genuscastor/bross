@@ -18,4 +18,5 @@ urlpatterns = patterns('',
     (r'^pages/$', 'core.controlers.backend.views.Pages'),
     (r'^pages/add/$', 'core.controlers.backend.views.AddPage'),
     url(r'^(?P<page_url>.+?)/$', 'core.views.getBrossPage'),
+    (r'^themes/$', 'bross.themes.views.Themes'),
 )
