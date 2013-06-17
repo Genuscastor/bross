@@ -39,7 +39,8 @@ urlpatterns = patterns('',
     (r'^themes/$', 'bross.themes.views.Themes'),
     (r'^modules/$', 'bross.modules.views.Modules'),
     url(r'^upload/', include('bross.fileupload.urls')),
-        
+    (r'^menus/$', 'bross.menus.views.MenusAll'),
+    (r'^addmenu/$', 'bross.treemenus.templatetags.tree_menu_tags.AddMenu'),
 
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
