@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Add Page{% endblock %}
+{% block title %}Pages{% endblock %}
 {% block nav %}
         <div class="nav">
             <ul>
@@ -11,14 +11,20 @@
             </ul>
         </div>
 {% endblock %}
-
-{% block h1 %}Add page{% endblock %}
+{% block sidebar %}
+<a href="/pages/add/" class="button"> Add a new page </a>
+<ul class="pages">
+        {% for title in pages %}
+        <li class="page"><a href="/{{ title.url }}/">{{ title }}</a><a href="#"><span></span></a></li>
+        {% endfor %}    
+</ul>
+{% endblock %}
 {% block content %}
-	<a href="/pages/" class="button">Back to pages</a>
-    <form class="editor" action="" method="post">
+	{% block h1 %}Pages{% endblock %}
+<form class="editor" action="" method="post">
 {% if form.errors %} <p> Please correct the fields: {{form.errors}} </p> {% endif %}
         {% csrf_token %}
-        <ul>
+        <ul> 
         <label> URL INVULLEN! </label>
         <p>{{ form.url }}</p>
         <label> AUTHOR </label>
@@ -39,7 +45,7 @@
         <p>{{ form.menu }}</p>
         <label> Parent </label>
         <p>{{ form.parent }}</p>
-        <p style="height:2em"><input type="submit" alt="Register" value="Add page"/></p>
+        <p style="height:2em"><input type="submit" alt="Register" value="Save page"/></p>
     </ul>
     </form>
 {% endblock %}

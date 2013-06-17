@@ -24,8 +24,10 @@ urlpatterns = patterns('',
     (r'^login/$', 'bross.account.views.LoginRequest'),
     (r'^logout/$', 'bross.account.views.LogoutRequest'),
     (r'^dashboard/$', 'bross.account.views.Dashboard'),
-    (r'^pages/$', 'bross.pages.views.Pages'),
+    (r'^pages/$', 'bross.pages.views.PagesAll'),
     (r'^pages/add/$', 'bross.pages.views.AddPage'),
+    (r'^pages/edit/(?P<url>.*)/$', 'bross.pages.views.EditPage'),
+    (r'^pages/delete/(?P<url>.*)/$', 'bross.pages.views.DeletePage'),
     (r'^$', 'bross.account.views.LoginRequest'),    
     # (r'^themes/$', 'bross.themes.views.Themes'),
     # (r'^menus/$', 'bross.menus.views.Menus'),
@@ -39,7 +41,6 @@ urlpatterns = patterns('',
     url(r'^upload/', include('bross.fileupload.urls')),
         
 
-
     #deze aanzetten als import werkt
     url(r'^contact/$', contact),
 
@@ -52,4 +53,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
+
+
+    (r'^(?P<url>.*)/$', 'bross.pages.views.ViewPage'),
+
 )

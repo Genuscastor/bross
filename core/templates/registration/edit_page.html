@@ -5,7 +5,7 @@
         <div class="nav">
             <ul>
                 <li><a class="pages active" href="/pages/"><span><img src="{% static "img/pages.png" %}" height="21" width="17"> </span>Pages</a></li>
-                <li><a class="themes" href="/themes/"><span><img src="{% static "img/themes.png" %}" height="21" width="21"></span> Themes</a></li>
+                <li><a class="themes" href="/themes/"><span><img src="{% static "img/themes.png" %}" height="21" width="21"></span> Themes</a></li>w
                 <li><a class="menus" href="/menus/"><span><img src="{% static "img/menu.png" %}" height="18" width="21"></span> Menus</a></li>
                 <li><a class="modules" href="/modules/"><span><img src="{% static "img/modules.png" %}" height="21" width="21"></span> Modules</a></li>
             </ul>
@@ -15,21 +15,11 @@
 <a href="/pages/add/" class="button"> Add a new page </a>
 <ul class="pages">
         {% for title in pages %}
-        <li class="page"><a class="confirm" href="delete/{{ title.url }}/"><span></span></a><a class="page-link" href="edit/{{ title.url }}/">{{ title }}</a></li>
+        <li class="page"><a href="/{{ title.url }}/">{{ title }}</a><a href="#"><span></span></a></li>
         {% endfor %}    
 </ul>
 {% endblock %}
 {% block content %}
-	<h1> Pages </h1>
-        <img class="page-bg" src="{% static "img/page.png" %}" height="342" width="246">
-<script>
-$(function() {
-    $('.confirm').click(function(e) {
-        e.preventDefault();
-        if (window.confirm("Noooooooooooooooooo! Don't delete me!")) {
-            location.href = this.href;
-        }
-    });
-});
-</script>
+	{% block h1 %}Pages{% endblock %}
+        <p>Laat pages zien TEST</p>
 {% endblock %}
