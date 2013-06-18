@@ -13,7 +13,8 @@ class MenuItem(models.Model):
     level = models.IntegerField(ugettext_lazy('level'), default=0, editable=False)
     rank = models.IntegerField(ugettext_lazy('rank'), default=0, editable=False)
     menu = models.ForeignKey('Menu', related_name='contained_items', verbose_name=ugettext_lazy('menu'), null=True, blank=True, editable=False)
-
+    published = models.BooleanField(ugettext_lazy('published'), default=False)
+    
     def __unicode__(self):
         return self.caption
 
