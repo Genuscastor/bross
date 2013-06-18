@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^show/(\d)/$', content),
     url(r'^save/$', saveSubmit),
     (r'^tinymce/', include('tinymce.urls')),
-    (r'^$', 'bross.editor.views.MainHomePage'),
+    
     (r'^register/$', 'bross.account.views.AccountRegistration'),
     (r'^beers/$', 'bross.beer.views.BeersAll'),
     (r'^beers/(?P<beerslug>.*)/$', 'bross.beer.views.SpecificBeer'),
