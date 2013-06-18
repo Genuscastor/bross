@@ -19,7 +19,9 @@
 {% if form.errors %} <p> Please correct the fields: {{form.errors}} </p> {% endif %}
         {% csrf_token %}
         <ul>
-        <label> URL INVULLEN! </label>
+        <label> Template </label>
+        <p>{{ form.template }}</p>
+        <label>URL</label>
         <p>{{ form.url }}</p>
         <label> AUTHOR </label>
         <p>{{ form.author }}</p>     
@@ -27,14 +29,16 @@
         <p>{{ form.title }}</p>
         <label> Content </label>
         <p>{{ form.content }}</p>
+        <div id="content2" style="display:none;">
+            <label> Sidebar</label>
+            <p>{{ form.content2 }}</p>
+        </div>
         <label> Desription </label>
         <p>{{ form.description }}</p>
         <label> Location </label>
         <p>{{ form.location }}</p>
         <label> Status </label>
         <p>{{ form.status }}</p>
-        <label> Template </label>
-        <p>{{ form.template }}</p>
         <label> Menu </label>
         <p>{{ form.menu }}</p>
         <label> Parent </label>
@@ -42,4 +46,16 @@
         <p style="height:2em"><input type="submit" alt="Register" value="Add page"/></p>
     </ul>
     </form>
+
+<script>
+$('select#id_template').change(function() {
+    if ($(this).val() == 'H' ){ 
+        $('#content2').show();
+    }
+    
+    else {
+        $('#content2').hide(); 
+    }
+});
+</script>
 {% endblock %}
