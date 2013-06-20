@@ -15,6 +15,9 @@
 	padding:0;
 }
 
+ul, li {
+	list-style: none;
+}
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -499,7 +502,18 @@ input.reset-button{
 .editor ul p {
 	margin:10px 0;
 }
-#id_content_tbl {
+#id_content_tbl, #id_sidebar_ifr {
 	width:500px !important;
 	height: 150px;
+}
+
+ul.errorlist li {
+	list-style: none;
+	background: #b00b1e;
+	color: #fff;
+	padding: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	font-size: 13px;
+	margin: 10px 0;
 }
