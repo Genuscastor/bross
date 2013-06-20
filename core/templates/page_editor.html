@@ -1,18 +1,3 @@
-{% extends "base.html" %}
-{% load static %}
-{% block title %}Add Page{% endblock %}
-{% block nav %}
-        <div class="nav">
-            <ul>
-                <li><a class="pages active" href="/pages/"><span><img src="{% static "img/pages.png" %}" height="21" width="17"> </span>Pages</a></li>
-                <li><a class="themes" href="/themes/"><span><img src="{% static "img/themes.png" %}" height="21" width="21"></span> Themes</a></li>
-                <li><a class="menus" href="/menus/"><span><img src="{% static "img/menu.png" %}" height="18" width="21"></span> Menus</a></li>
-                <li><a class="modules" href="/modules/"><span><img src="{% static "img/modules.png" %}" height="21" width="21"></span> Modules</a></li>
-            </ul>
-        </div>
-{% endblock %}
-
-{% block content %}
 	<a href="/pages/" class="button">Back to pages</a>
     <form class="editor" action="" method="post">
 {% if form.errors %} <p> Please correct the fields: {{form.errors}} </p> {% endif %}
@@ -20,17 +5,23 @@
         <ul>
         <label> Template </label>
         <p>{{ form.template }}</p>
-        <label>URL</label>
-        <p>{{ form.url }}</p>
-        <label> AUTHOR </label>
-        <p>{{ form.author }}</p>     
+        <label> Author </label>
+        <p>{{ form.author }}</p>
         <label> Title </label>
         <p>{{ form.title }}</p>
+        <label>URL</label>
+        <p>{{ form.url }}</p>
         <label> Content </label>
         <p>{{ form.content }}</p>
-        <div id="content2" style="display:none;">
+        <div id="useSidebar" style="display:none;">
+            <label> Sidebar </label>
+            <p>{{ form.useSidebar }}</p>
+        </div>
+        <div id="editSidebar" style="display:none;">
+            <label> Sidebar Title</label>
+            <p>{{ form.sidebarTitle }}</p>
             <label> Sidebar</label>
-            <p>{{ form.content2 }}</p>
+            <p>{{ form.sidebar }}</p>
         </div>
         <label> Desription </label>
         <p>{{ form.description }}</p>
@@ -47,14 +38,36 @@
     </form>
 
 <script>
+$(document).ready(function() {
+    if ($('select#id_template').val() == 'H' ){ 
+        $('#useSidebar').show();
+        if ($('input#id_useSidebar').is(":checked")) {
+            $('#editSidebar').show();
+        }
+    }
+});
+
 $('select#id_template').change(function() {
     if ($(this).val() == 'H' ){ 
-        $('#content2').show();
+        $('#useSidebar').show();
+        if ($('input#id_useSidebar').is(":checked")) {
+            $('#editSidebar').slideDown();
+        }
     }
     
     else {
-        $('#content2').hide(); 
+        $('#useSidebar').hide();
+        $('#editSidebar').slideUp(); 
+    }
+});
+
+$('input#id_useSidebar').change(function() {
+    if ($('input#id_useSidebar').is(":checked")) {
+        $('#editSidebar').slideDown();
+    }
+
+    else {
+        $('#editSidebar').slideUp();
     }
 });
 </script>
-{% endblock %}

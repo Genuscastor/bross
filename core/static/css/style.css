@@ -189,7 +189,7 @@ body {
 
 .cms-content {
 	width:100%;
-	padding:30px 20px 70px 280px;
+	padding:40px 20px 70px 280px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -458,4 +458,48 @@ p.user-loggedin {
 
 img.page-bg {
 	margin-left:40%;
+}
+
+h1.title {
+	font-size:80px;
+	font-weight: 300;
+	color:#353a40;
+	text-align: center;
+}
+
+h2.description {
+	margin:0;
+	text-align: center;
+}
+
+.form-reset {
+	margin: auto;
+	width: 250px;
+	margin-top:25px;
+}
+
+input.reset-button{
+	width: 250px;
+	height: 35px;
+	font-size: 16px;
+	}
+
+.password-reset {
+	margin-top:50px;
+}
+
+.editor ul {
+	width: 500px
+}
+
+.editor ul select {
+	width: 500px;
+}
+
+.editor ul p {
+	margin:10px 0;
+}
+#id_content_tbl {
+	width:500px !important;
+	height: 150px;
 }

@@ -19,11 +19,27 @@
 	});
 </script>
 </head>
-{% if page.template == 'H' %}
-	{% include "sjaan_thema/landing.html" %}
-{% elif page.template == 'P' %}
-	{% include "sjaan_thema/fullwidth.html" %}
-{% else %}
-	{% include "sjaan_thema/fullwidth.html" %}
-{% endif %}
+<body class="home">
+	<div class="container">
+		<div id="header">
+			<a class="logo" href="#">LOGO</a>
+			{% block nav %}
+			<div id="nav">
+				<ul>
+					{% for title in pages %}
+			        	<li class="page"><a href="/{{ title.url }}/">{{ title }}</a></li>
+			        {% endfor %} 
+				</ul>
+			</div>
+			{% endblock %}
+		</div>
+		{% if page.template == 'H' %}
+			{% include "sjaan_thema/landing.html" %}
+		{% elif page.template == 'P' %}
+			{% include "sjaan_thema/fullwidth.html" %}
+		{% else %}
+			{% include "sjaan_thema/fullwidth.html" %}
+		{% endif %}
+	</div>
+</body>
 </html>

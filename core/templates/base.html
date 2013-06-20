@@ -6,13 +6,11 @@
     <title>BROSS CMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" title="default" />
-    <link rel="stylesheet" type="text/css" href="{% static "css/jquery-sortable.css" %}" title="default" />
+    <!-- <link rel="stylesheet" type="text/css" href="{% static "css/jquery-sortable.css" %}" title="default" /> -->
     <!--- <link rel="stylesheet" href="/static/css/font-awesome.min.css"> !-->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script type="text/javascript" src="{% static "js/tiny_mce/tiny_mce.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/jquery-sortable.js" %}"></script>   
-    <script type="text/javascript" src="{% static "js/jquery.nestable.js" %}"></script>   
     <script type="text/javascript">
         tinymce.init({
             selector: "textarea"
@@ -28,8 +26,7 @@
                     <h1>Bross CMS</h1>
                 </a>
         </div>
-        {% block nav %}
-        {% endblock %}
+        {% block nav %}{% endblock %}
 
         <div class="profile-options">
             <ul class="profile-options">
@@ -43,9 +40,8 @@
         {% endblock %}
     </div>
     <div class="cms-content">
-    {% block content %}   
         <h1>{% block h1 %}{% endblock %}</h1>
-    {% endblock %}
+    {% block content %}{% endblock %}
     </div>
     {% block footer %}
 	<div id="footer">
