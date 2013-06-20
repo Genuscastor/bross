@@ -1,2 +1,29 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Add Page{% endblock %}
+{% block nav %}
+        <div class="nav">
+            <ul>
+                <li><a class="pages active" href="/pages/"><span><img src="{% static "img/pages.png" %}" height="21" width="17"> </span>Pages</a></li>
+                <li><a class="themes" href="/themes/"><span><img src="{% static "img/themes.png" %}" height="21" width="21"></span> Themes</a></li>
+                <li><a class="menus" href="/menus/"><span><img src="{% static "img/menu.png" %}" height="18" width="21"></span> Menus</a></li>
+                <li><a class="modules" href="/modules/"><span><img src="{% static "img/modules.png" %}" height="21" width="21"></span> Modules</a></li>
+            </ul>
+        </div>
+{% endblock %}
+
+{% block sidebar %}
+<a href="/pages/add/" class="button"> Add a new page </a>
+<ul class="pages">
+        {% for title in pages %}
+        <li class="page"><a class="confirm" href="/pages/delete/{{ title.url }}/"><span></span></a><a class="page-link" href="/pages/edit/{{ title.url }}/">{{ title }}</a></li>
+        {% endfor %}    
+</ul>
+{% endblock %}
+
 {% block h1 %}Add page{% endblock %}
-{% include page_editor.html %}
+{% block content %}
+    <a href="/pages/" class="button">Back to pages</a>
+    {% include "page_editor.html" %}
+{% endblock %}

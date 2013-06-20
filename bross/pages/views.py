@@ -6,6 +6,7 @@ from django.template import RequestContext
 from bross.pages.forms import AddPageForm, EditPageForm
 from bross.pages.models import BrossContent
 from django.contrib.auth import authenticate, login, logout
+import urllib
 
 @login_required
 def Pages(request):
@@ -19,26 +20,13 @@ def AddPage(request):
             form.save()
             return HttpResponseRedirect('/pages/')
         else:
-            print form.errors
-            return HttpResponseRedirect('/dashboard/')
+            return render_to_response('add_page.html', {'form': form}, context_instance=RequestContext(request))
 
     else:        
         form = AddPageForm()
-        context = { 'form' : form }
+        pages = BrossContent.objects.all().order_by('title')
+        context = { 'form' : form, 'pages': pages }
         return render_to_response('add_page.html', context, context_instance=RequestContext(request))
-
-
-def ViewPage(request, url):
-    page = BrossContent.objects.get(url=url)
-    pages = BrossContent.objects.all().order_by('title')
-    context = {'page': page, 'pages': pages}
-    return render_to_response('sjaan_thema/base.html', context, context_instance=RequestContext(request))
-
-
-def PagesAll(request):
-    pages = BrossContent.objects.all().order_by('title')
-    context = {'pages': pages}
-    return render_to_response('pages.html', context, context_instance=RequestContext(request))
 
 def EditPage(request, url):
     page = BrossContent.objects.get(url=url)
@@ -54,13 +42,29 @@ def EditPage(request, url):
 
     else:
         form = EditPageForm(instance=page)
-        context = {'form': form}
+        pages = BrossContent.objects.all().order_by('title')
+        context = {'form': form, 'pages': pages}
         return render_to_response('edit_page.html', context, context_instance=RequestContext(request))
 
 def DeletePage(request, url):
     page = BrossContent.objects.get(url=url)
     page.delete()
     return HttpResponseRedirect('/pages/')
+
+
+def ViewPage(request, url):
+    page = BrossContent.objects.get(url=url)
+    pages = BrossContent.objects.all().order_by('title')
+    context = {'page': page, 'pages': pages}
+    return render_to_response('sjaan_thema/base.html', context, context_instance=RequestContext(request))
+
+
+def PagesAll(request):
+    pages = BrossContent.objects.all().order_by('title')
+    context = {'pages': pages}
+    return render_to_response('pages.html', context, context_instance=RequestContext(request))
+
+
 
 
 
