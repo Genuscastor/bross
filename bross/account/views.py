@@ -15,9 +15,9 @@ def AccountRegistration(request):
                 if form.is_valid():
                         user = User.objects.create_user(username=form.cleaned_data['username'], email = form.cleaned_data['email'], password = form.cleaned_data['password'])
                         user.save()
-                        account = Account(user=user, name=form.cleaned_data['name'])
-                        account.save()
-                        return HttpResponseRedirect('/dashboard/')
+                        # account = Account(name=form.cleaned_data['name'], email=form.cleaned_data['email'])
+                        # account.save()
+                        return HttpResponseRedirect('/login/')
                 else:
                         return render_to_response('register.html', {'form': form}, context_instance=RequestContext(request))
         else:

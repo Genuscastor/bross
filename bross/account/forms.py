@@ -4,6 +4,7 @@ from django.forms import ModelForm
 from bross.account.models import Account
 
 class RegistrationForm(ModelForm):
+        name            = forms.CharField(label=(u'Name'))
         username        = forms.CharField(label=(u'User Name'))
         email           = forms.EmailField(label=(u'Email Address'))
         password        = forms.CharField(label=(u'Password'), widget=forms.PasswordInput(render_value=False))
