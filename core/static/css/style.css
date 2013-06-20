@@ -285,6 +285,13 @@ a.button {
 	text-decoration: none;
 }
 
+
+.button.big {
+	width:250px;
+	padding: 10px 40px;
+	margin: auto;
+}
+
 a.button:hover {
 	background:#007FCE;
 	text-decoration: none;
