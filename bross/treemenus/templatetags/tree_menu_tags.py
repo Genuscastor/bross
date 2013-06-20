@@ -5,11 +5,10 @@ from django.template import Node, TemplateSyntaxError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from bross.treemenus.forms import AddMenuForm
+from bross.treemenus.forms import AddMenuForm, SaveMenu
 from bross.treemenus.models import MenuItem
 from treemenus.models import Menu, MenuItem
 from treemenus.config import APP_LABEL
-
 
 register = template.Library()
 
@@ -89,3 +88,21 @@ def reverse_named_url(parser, token):
 
     return ReverseNamedURLNode(named_url, parser)
 reverse_named_url = register.tag(reverse_named_url)
+
+def SaveMenus(request):
+    if request.method == 'POST':
+       menuorder = SaveMenu(request.POST)
+
+       if menuorder.is_valid():
+           menuorder.save()
+           return HttpResponseRedirect('/savemenu/')
+       else:
+           print menuorder.errors
+           print "doet niks"
+           return HttpResponseRedirect('/menus/')
+
+
+    else:        
+       menuorder = AddMenuForm()
+       context = { 'menuorder' : menuorder }
+       return render_to_response('menusall.html', context, context_instance=RequestContext(request))

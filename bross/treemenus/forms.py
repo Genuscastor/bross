@@ -5,3 +5,7 @@ from bross.treemenus.models import MenuItem
 class AddMenuForm(ModelForm):
 	class Meta:
 		model = MenuItem
+
+class SaveMenu(ModelForm):
+	class Meta:
+		model = MenuItem
