@@ -4,9 +4,9 @@ TEMPLATE = (
         ('H', 'Home'),
         ('B', 'Blog'),
         ('P', 'Page'),
-        ('M', 'Menu'),
         ('G', 'Gallery'),
         ('C', 'Contact'),
+        ('M', 'Menu'),
 )
 
 PERMISSIONS = (
@@ -53,7 +53,9 @@ class BrossContent(models.Model):
     description = models.CharField(max_length=255)
     template = models.CharField(max_length=1, choices=TEMPLATE)
     content = models.TextField(blank=True)
-    content2 = models.TextField(blank=True)
+    useSidebar = models.BooleanField()
+    sidebarTitle = models.CharField(max_length=100, blank=True)
+    sidebar = models.TextField(blank=True)
     location = models.CharField(max_length=255)
     parent = models.ForeignKey('self', null=True, blank=True)
     menu        = models.CharField(max_length=1, choices=MENU_CHOICES)

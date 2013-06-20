@@ -1,28 +1,13 @@
-<body class="home">
-	<div class="container">
-		<div id="header">
-			<a class="logo" href="#">LOGO</a>
-			<div id="nav">
-				<ul>
-					{% for title in pages %}
-			        	<li class="page"><a href="/{{ title.url }}/">{{ title }}</a></li>
-			        {% endfor %} 
-				</ul>
-			</div>
-		</div>
-
-		<div id="content">
-			<h1>{{ page.title }} </h1>
-			<p> {{ page.content|safe }} </p>
-		</div>
+<div id="content">
+	<h1>{{ page.title }} </h1>
+	<p> {{ page.content|safe }} </p>
+</div>
 		
-		<div id="footer">
-			<div class="credits">
-				<p>developed by <a href="http://www.brosscms.com" target="_BLANK">Bross</a></p>
-			</div>
-			<div class="copyright">
-				<p>&copy; 2013 BrossCMS | <a href="contact.html">Contact</a></p>
-			</div>
-		</div>
+<div id="footer">
+	<div class="credits">
+		<p>developed by <a href="http://www.brosscms.com" target="_BLANK">Bross</a></p>
 	</div>
-</body>
+	<div class="copyright">
+		<p>&copy; 2013 BrossCMS | <a href="contact.html">Contact</a></p>
+	</div>
+</div>
