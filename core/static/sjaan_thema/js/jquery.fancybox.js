@@ -1,3 +1,4 @@
+
 /*!
  * fancyBox - jQuery Plugin
  * version: 2.1.4 (Thu, 10 Jan 2013)
