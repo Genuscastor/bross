@@ -27,8 +27,8 @@
 			<div id="nav">
 				<ul>
 					{% for title in pages %}
-			        	<li class="page"><a href="/{{ title.url }}/">{{ title }}</a></li>
-			        {% endfor %} 
+			        	<li class="page">{% if page.title = title %}<a class="active" href="/{{ title.url }}/">{% else %}<a href="/{{ title.url }}/">{% endif %} {{ title }}</a></strong></li>
+			        {% endfor %}
 				</ul>
 			</div>
 			{% endblock %}

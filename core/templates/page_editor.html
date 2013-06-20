@@ -1,38 +1,37 @@
-	<a href="/pages/" class="button">Back to pages</a>
     <form class="editor" action="" method="post">
 {% if form.errors %} <p> Please correct the fields: {{form.errors}} </p> {% endif %}
         {% csrf_token %}
         <ul>
-        <label> Template </label>
-        <p>{{ form.template }}</p>
-        <label> Author </label>
-        <p>{{ form.author }}</p>
-        <label> Title </label>
-        <p>{{ form.title }}</p>
-        <label>URL</label>
-        <p>{{ form.url }}</p>
-        <label> Content </label>
-        <p>{{ form.content }}</p>
+        <p><label> Template </label>
+        {{ form.template }}</p>
+        <p><label> Author </label>
+        {{ form.author }}</p>
+        <p><label> Title </label>
+        {{ form.title }}</p>
+        <p><label>URL</label>
+        {{ form.url }}</p>
+        <p><label> Content </label>
+        {{ form.content }}</p>
         <div id="useSidebar" style="display:none;">
-            <label> Sidebar </label>
-            <p>{{ form.useSidebar }}</p>
+            <p><label> Sidebar </label>
+            {{ form.useSidebar }}</p>
         </div>
         <div id="editSidebar" style="display:none;">
-            <label> Sidebar Title</label>
-            <p>{{ form.sidebarTitle }}</p>
-            <label> Sidebar</label>
-            <p>{{ form.sidebar }}</p>
+            <p><label> Sidebar Title</label>
+            {{ form.sidebarTitle }}</p>
+            <p><label> Sidebar</label>
+            {{ form.sidebar }}</p>
         </div>
-        <label> Desription </label>
-        <p>{{ form.description }}</p>
-        <label> Location </label>
-        <p>{{ form.location }}</p>
-        <label> Status </label>
-        <p>{{ form.status }}</p>
-        <label> Menu </label>
-        <p>{{ form.menu }}</p>
-        <label> Parent </label>
-        <p>{{ form.parent }}</p>
+        <p><label> Desription </label>
+        {{ form.description }}</p>
+        <p><label> Location </label>
+        {{ form.location }}</p>
+        <p><label> Status </label>
+        {{ form.status }}</p>
+        <p><label> Menu </label>
+        {{ form.menu }}</p>
+        <p><label> Parent </label>
+        {{ form.parent }}</p>
         <p style="height:2em"><input type="submit" alt="Register" value="Add page"/></p>
     </ul>
     </form>

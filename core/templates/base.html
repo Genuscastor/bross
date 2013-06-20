@@ -40,8 +40,9 @@
         {% endblock %}
     </div>
     <div class="cms-content">
+    {% block content %}   
         <h1>{% block h1 %}{% endblock %}</h1>
-    {% block content %}{% endblock %}
+    {% endblock %}
     </div>
     {% block footer %}
 	<div id="footer">
