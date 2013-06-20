@@ -1,0 +1,375 @@
+.transition4 {
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+/* ------- CSS RESET ------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	text-shadow: 0px 0px 1px rgba(128,128,128,0.01); 
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* ------- BASE ------- */
+body {
+	font:16px Lato,sans-serif,Arial;
+}
+
+#container {
+	width:100%;
+}
+
+a {
+	color:#E74C3C;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.button {
+	margin:10px 0;
+	padding:10px 20px;
+	background-color:#E74C3C;
+	color:#fff;
+	font-size: 18px;
+	font-weight: 900;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+a.button:hover {
+	text-decoration: none;
+	background-color:#D13D2E;
+}
+
+/* ------- HEADER -------- */
+#header {
+	width:1000px;
+	margin:20px auto 20px;
+	padding:20px 0;
+}
+
+#header a.logo {
+	padding:20px 30px;
+	color:#E74C3C;
+	border:1px solid #E74C3C;
+	text-decoration: none;
+}
+
+#nav {
+	float:right;
+	padding:25px 0 0 0;
+}
+
+#nav li {
+	float:left;
+	padding:0 0 0 20px;
+}
+
+#nav a {
+	color:#000;
+	text-decoration: none;
+}
+
+#nav a.active {
+	color:#E74C3C;
+}
+
+#nav a:hover {
+	color:#E74C3C;
+}
+
+/* ------- HOME IMAGE -------- */
+#home-image, #gmaps {
+	width:100%;
+	height:350px;
+	margin-bottom: 40px;
+}
+
+#home-image {
+	background:url(../img/bg2.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* ------ CONTENT ------- */
+#content {
+	width:1000px;
+	margin:0 auto;
+}
+
+#content p {
+	line-height: 200%;
+	padding:10px 0;
+}
+
+#content-left {
+	width:700px;
+	float:left;
+	padding:0 80px 0 0;
+	margin-bottom:20px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+h1 {
+	font-size:30px;
+	color:#E74C3C;
+}
+
+#sidebar {
+	width:300px;
+	float:right;
+	margin-top:10px;
+	padding:20px;
+	background:#E74C3C;
+	color:#fff;
+	font-size:14px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#sidebar h2 {
+	font-size:24px;
+	color:#fff;
+}
+
+#sidebar a {
+	color:#FFFFFF;
+}
+/* ------- FOOTER ------ */
+#footer{
+	width:1000px;
+	margin:10px auto 0;
+	border-top: 1px solid #E3E3E3;
+	padding:10px 0 50px;
+	font-size: 12px;
+}
+
+#footer .credits {
+	float:left;
+}
+
+#footer .copyright {
+	float:right;
+}
+
+/* ---- GALLERY VIEW ---- */
+#gallery {
+	margin-top:10px;
+}
+
+#gallery img {
+	width:100%;
+	height:100%;
+}
+
+.view {
+    width:33.33333333333%;
+    height: 208px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    background: #fff url(../images/bgimg.jpg) no-repeat center center
+}
+
+.view img {
+    display: block;
+    position: relative;
+	width:100%;
+	-webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.view img:hover {
+	-webkit-transform: scale(1.2,1.2);
+   -moz-transform: scale(1.2,1.2);
+   -o-transform: scale(1.2,1.2);
+   -ms-transform: scale(1.2,1.2);
+   transform: scale(1.2,1.2);
+}
+
+/* ----- BLOG ----- */
+.post h2 {
+	font-size:24px;
+	font-weight: 900;
+	margin-top:10px;
+	color:#E74C3C;
+}
+
+.post {
+	margin-bottom:30px;
+	padding-bottom:10px;
+	background:#F7F7F7;
+	padding:10px 20px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	-webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.post:hover {
+	background:#E8E8E8;
+}
+
+.date {
+	background:#E74C3C;
+	color:#fff;
+	width:70px;
+	height:70px;
+	float:left;
+	margin:0 30px 0 -40px ;
+	padding:10px 10px 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	text-align: right;
+}
+
+span.day {
+	width:100%;
+	text-align: center;
+	font-size:56px;
+	font-weight: 900;
+	line-height: 90%;
+}
+
+span.month {
+	line-height: 20%;
+	padding-right: 3px;
+}
+
+/* ----- CONTACT ------ */
+form {
+	margin:20px 0 0;
+}
+
+input[type="text"], input[type="email"], textarea {
+	width:100%;
+	border:none;
+	background:#F7F7F7;
+	margin:10px 0;
+	padding:10px;
+	font:16px Lato,sans-serif,Arial;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+input[type="submit"] {
+	margin:10px 0;
+	padding:10px 20px;
+	background-color:#E74C3C;
+	border:none;
+	color:#fff;
+	font-size: 18px;
+	font-weight: 900;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+textarea {
+	height:150px;
+}
+
+input:hover, textarea:hover, input:focus, textarea:focus {
+	background:#E8E8E8;
+}
+
+input[type="submit"]:hover {
+	text-decoration: none;
+	background-color:#D13D2E;
+}

@@ -31,7 +31,7 @@ def AddPage(request):
 def ViewPage(request, url):
     page = BrossContent.objects.get(url=url)
     context = {'page': page}
-    return render_to_response('viewpage.html', context, context_instance=RequestContext(request))
+    return render_to_response('sjaan_thema/fullwidth.html', context, context_instance=RequestContext(request))
 
 
 def PagesAll(request):
