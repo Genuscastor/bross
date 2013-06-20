@@ -288,8 +288,8 @@ a.button {
 
 .button.big {
 	width:250px;
-	padding: 10px 40px;
 	margin: auto;
+	font-size: 22px;
 }
 
 a.button:hover {
