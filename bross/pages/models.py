@@ -17,8 +17,8 @@ PERMISSIONS = (
 
 MENU_CHOICES = (
         #dik automatisch gegenereerde lijst met menus
-        ('1', 'Menu 1'),
-        ('2', 'Menu 2'),
+        ('1', 'Hoofdmenu'),
+        ('2', 'Submenu'),
 )
 
 STATUS_CHOICES = (
@@ -56,10 +56,9 @@ class BrossContent(models.Model):
     useSidebar = models.BooleanField()
     sidebarTitle = models.CharField(max_length=100, blank=True)
     sidebar = models.TextField(blank=True)
-    location = models.CharField(max_length=255)
     parent = models.ForeignKey('self', null=True, blank=True)
-    menu        = models.CharField(max_length=1, choices=MENU_CHOICES)
-    status      = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    menu	= models.CharField(max_length=1, choices=MENU_CHOICES)
+    status	= models.CharField(max_length=1, choices=STATUS_CHOICES)
     
     def __unicode__(self):
         return self.title

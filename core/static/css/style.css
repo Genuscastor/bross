@@ -1,3 +1,30 @@
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol {
+	background: #EEE;
+	border: 1px solid #CCC;
+	padding: 15px;
+	width: 175px;
+}
+
+ol.vertical li {
+    background: none repeat scroll 0 0 #DADADA;
+    border: 1px solid #CCCCCC;
+    color: #0088CC;
+    display: block;
+    margin: 5px;
+    padding: 5px;
+		width: 125px;
+}
+
 .transition2 {
 	-webkit-transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;

@@ -63,6 +63,9 @@ def PagesAll(request):
     pages = BrossContent.objects.all().order_by('title')
     context = {'pages': pages}
     return render_to_response('pages.html', context, context_instance=RequestContext(request))
+		
+def Menus(request):
+	return render_to_response('menus.html')
 
 
 

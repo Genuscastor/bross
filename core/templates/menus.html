@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Menus{% endblock %}
+{% block nav %}
+        <div class="nav">
+            <ul>
+                <li><a class="pages" href="/pages/"><span><img src="{% static "img/pages.png" %}" height="21" width="17"> </span>Pages</a></li>
+                <li><a class="themes" href="/themes/"><span><img src="{% static "img/themes.png" %}" height="21" width="21"></span> Themes</a></li>
+                <li><a class="menus active" href="/menus/"><span><img src="{% static "img/menu.png" %}" height="18" width="21"></span> Menus</a></li>
+                <li><a class="modules" href="/modules/"><span><img src="{% static "img/modules.png" %}" height="21" width="21"></span> Modules</a></li>
+            </ul>
+        </div>
+{% endblock %}
+{% block sidebar %}
+<a href="#" class="button"> Add a new menu </a>
+<ul class="pages">
+        <li class="page"><a class="confirm" href="#"><span></span></a><a class="page-link" href="#">Hoofdmenu</a></li>  
+				<li class="page"><a class="confirm" href="#"><span></span></a><a class="page-link" href="#">Submenu</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+	<h1> Hoofdmenu </h1>
+	<ol class="simple_with_animation vertical">
+		<li> About </li>
+		<li> Contact </li>
+	</ol>
+	<p style="height:2em"><input type="submit" alt="Register" value="Save" style="float:left;"/></p>
+<script src='../static/js/jquery-sortable.js'></script>
+<script>
+var adjustment
+
+$("ol.simple_with_animation").sortable({
+  group: 'simple_with_animation',
+  pullPlaceholder: false,
+  // animation on drop
+  onDrop: function  (item, targetContainer, _super) {
+    var clonedItem = $('<li/>').css({height: 0})
+    item.before(clonedItem)
+    clonedItem.animate({'height': item.height()})
+    
+    item.animate(clonedItem.position(), function  () {
+      clonedItem.detach()
+      _super(item)
+    })
+  },
+
+  // set item relative to cursor position
+  onDragStart: function ($item, container, _super) {
+    var offset = $item.offset(),
+    pointer = container.rootGroup.pointer
+
+    adjustment = {
+      left: pointer.left - offset.left,
+      top: pointer.top - offset.top
+    }
+
+    _super($item, container)
+  },
+  onDrag: function ($item, position) {
+    $item.css({
+      left: position.left - adjustment.left,
+      top: position.top - adjustment.top
+    })
+  }
+})
+</script>
+{% endblock %}
